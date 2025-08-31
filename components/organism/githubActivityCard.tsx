@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useAtom } from "jotai";
+import { ogImageCacheAtom, ogInFlightMap } from "@/store/ogImageCacheAtom";
 import { Card, CardContent, CardFooter } from "../ui/card";
 import { Separator } from "../ui/separator";
 import { GitHubEventTypeKey } from "@/types/githubEventsType";
@@ -43,16 +45,48 @@ export const GithubActivityCard = ({ data }: GithubActivityCardProps) => {
 	} = getActivityCardDetail(activityType, data);
 
 	const [ogImage, setOgImage] = useState<string | null>(null);
+	const [cache, setCache] = useAtom(ogImageCacheAtom);
 
 	useEffect(() => {
+		let isMounted = true;
+
 		const getOg = async () => {
-			if (url) {
-				const img = await fetchOgImage(url);
-				setOgImage(img);
+			if (!url) return;
+
+			// 1) キャッシュにあればそれを使う
+			const cached = cache[url];
+			if (cached && cached.status === "success") {
+				setOgImage(cached.data);
+				return;
 			}
+
+			// 2) すでに in-flight の場合はそれを再利用
+			let promise = ogInFlightMap.get(url);
+			if (!promise) {
+				// 新規フェッチを作る
+				promise = (async () => {
+					// 一時的にキャッシュを loading にする
+					setCache((prev) => ({ ...prev, [url]: { status: "loading", data: null } }));
+					const data = await fetchOgImage(url);
+					// 成功 or 失敗をキャッシュに記録
+					setCache((prev) => ({ ...prev, [url]: { status: data ? "success" : "error", data } }));
+					return data;
+				})();
+				ogInFlightMap.set(url, promise);
+				// in-flight 完了時にマップから削除
+				promise.finally(() => ogInFlightMap.delete(url));
+			}
+
+			const img = await promise;
+			if (isMounted) setOgImage(img);
 		};
+
 		getOg();
-	}, []);
+
+		return () => {
+			isMounted = false;
+		};
+	}, [url, cache, setCache]);
 
 	return (
 		<Card
