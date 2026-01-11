@@ -1,7 +1,7 @@
 {
 	"bio": {
 		"title": "自己紹介",
-		"subtitle": "ソフトウェアエンジニア",
+		"subtitle": "エンジニア",
 		"main": [
 			"慶應義塾大学の学部生です",
 			"リサーチエンジニアインターンとしても働いています。",
@@ -21,10 +21,22 @@
 				"field": "慶應義塾大学 村田研究室",
 				"time": "2025/4 ~"
 			}
+		],
+		"career": [
+			{
+				"title": "サーバーチーム インターンシップ",
+				"company": "慶應義塾大学 AIC",
+				"period": "2025/12 ~ 現在",
+				"description": "AI研究のためのGPUクラスターの構築と保守に取り組んでいます。",
+				"url": "https://aic.keio.ac.jp/"
+			}
 		]
 	},
 	"education": {
-		"title": "教育経歴"
+		"title": "学歴"
+	},
+	"career": {
+		"title": "職歴"
 	},
 	"interests": {
 		"title": "興味・関心"

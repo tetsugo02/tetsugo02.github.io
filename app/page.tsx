@@ -1,19 +1,17 @@
 "use client";
 
-import { Header } from "@/components/atom/header";
-import { Paragraph } from "@/components/atom/paragraph";
 import { getBioContent } from "@/data/bio/bioContent";
 import { Interest } from "@/components/organism/interest";
 import { Education } from "@/components/organism/education";
+import { Career } from "@/components/organism/career";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import { useInitData } from "@/hooks/useInitData";
 import { PageAnimationWrapper } from "@/components/atom/pageAnimationWrapper";
+import { Terminal } from "lucide-react";
 
 export default function Home() {
 	const { t, i18n } = useTranslation("home");
 	const [isReady, setIsReady] = useState(false);
-	const { githubEventData } = useInitData();
 
 	useEffect(() => {
 		if (i18n.isInitialized) {
@@ -27,8 +25,8 @@ export default function Home() {
 
 	if (!isReady) {
 		return (
-			<div className="flex items-center justify-center h-64">
-				<div>Loading...</div>
+			<div className="flex h-[50vh] w-full items-center justify-center">
+				<div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
 			</div>
 		);
 	}
@@ -37,23 +35,32 @@ export default function Home() {
 
 	return (
 		<PageAnimationWrapper>
-			<Header level="h1">{t("bio.title")}</Header>
-			<div className=" justify-items-start w-full h-fit flex flex-col gap-4  ">
-				<article>
-					{bioContent.main.map((item, index) => {
-						return (
-							<Paragraph key={index} className=" m-1 text-xl">
+			<section className="flex flex-col gap-8 pb-8 pt-4 md:pt-8 text-left">
+				<div className="space-y-4">
+					<div className="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium">
+						<Terminal className="mr-2 h-4 w-4" />
+						<span>{t("bio.subtitle") || "Software Engineer"}</span>
+					</div>
+					<h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+						{t("bio.title")}
+					</h1>
+					<div className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+						{bioContent.main.map((item, index) => (
+							<p key={index} className="mb-2 last:mb-0">
 								{item}
-							</Paragraph>
-						);
-					})}
-				</article>
-				<article className="mt-4  grid grid-cols-1 gap-4 ">
-					<Interest />
-					<Education />
-				</article>
-			</div>
-			<footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
+							</p>
+						))}
+					</div>
+				</div>
+
+				<div className="grid grid-cols-1 gap-6">
+					<Career />
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+						<Education />
+						<Interest />
+					</div>
+				</div>
+			</section>
 		</PageAnimationWrapper>
 	);
 }

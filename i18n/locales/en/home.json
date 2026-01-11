@@ -21,10 +21,22 @@
 				"field": "Keio University, Murata Laboratory",
 				"time": "2025/4 ~"
 			}
+		],
+		"career": [
+			{
+				"title": "Server Team Intern",
+				"company": "Keio AIC",
+				"period": "2025/12 ~ Present",
+				"description": "Working on building and maintaining GPU clusters for AI research.",
+				"url": "https://aic.keio.ac.jp/"
+			}
 		]
 	},
 	"education": {
 		"title": "Education"
+	},
+	"career": {
+		"title": "Work Experience"
 	},
 	"interests": {
 		"title": "Interests"

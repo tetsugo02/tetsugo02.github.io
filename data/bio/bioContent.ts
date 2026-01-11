@@ -1,4 +1,4 @@
-import { BioContentType, EducationContent } from "@/types/bioType";
+import { BioContentType, EducationContent, CareerContent } from "@/types/bioType";
 import { TFunction } from "i18next";
 
 export const getBioContent = (t: TFunction): BioContentType => {
@@ -6,6 +6,7 @@ export const getBioContent = (t: TFunction): BioContentType => {
 		main: t("bio.main", { returnObjects: true }) as string[],
 		interest: t("bio.interests", { returnObjects: true }) as string[],
 		education: t("bio.education", { returnObjects: true }) as EducationContent[],
+		career: t("bio.career", { returnObjects: true }) as CareerContent[],
 	};
 };
 
@@ -30,4 +31,5 @@ export const bioContent: BioContentType = {
 			time: "2025/4 ~",
 		},
 	] as EducationContent[],
+	career: [] as CareerContent[],
 };
