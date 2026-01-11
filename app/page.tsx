@@ -5,11 +5,10 @@ import { Paragraph } from "@/components/atom/paragraph";
 import { getBioContent } from "@/data/bio/bioContent";
 import { Interest } from "@/components/organism/interest";
 import { Education } from "@/components/organism/education";
-import { Separator } from "@/components/ui/separator";
-import { RecentExperience } from "@/components/organism/workExperience";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useInitData } from "@/hooks/useInitData";
+import { PageAnimationWrapper } from "@/components/atom/pageAnimationWrapper";
 
 export default function Home() {
 	const { t, i18n } = useTranslation("home");
@@ -37,7 +36,7 @@ export default function Home() {
 	const bioContent = getBioContent(t);
 
 	return (
-		<>
+		<PageAnimationWrapper>
 			<Header level="h1">{t("bio.title")}</Header>
 			<div className=" justify-items-start w-full h-fit flex flex-col gap-4  ">
 				<article>
@@ -54,12 +53,7 @@ export default function Home() {
 					<Education />
 				</article>
 			</div>
-			<Separator />
-			<Header level="h1" className="mt-4">
-				{t("workExperience.title")}
-			</Header>
-			<RecentExperience githubEventData={githubEventData} />
 			<footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
-		</>
+		</PageAnimationWrapper>
 	);
 }

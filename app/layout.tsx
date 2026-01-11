@@ -5,14 +5,7 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { ThemeProvider } from "@/components/atom/themeProvider";
 import { AppSidebar } from "@/components/organism/appSidebar";
 import { Navibar } from "@/components/organism/navbar";
-import { Roboto } from "next/font/google";
 import { I18nClientProvider } from "@/components/atom/i18nProvider";
-
-const roboto = Roboto({
-	weight: ["400", "500", "700"],
-	subsets: ["latin"],
-	variable: "--font-roboto",
-});
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -40,7 +33,7 @@ export default function RootLayout({
 	return (
 		<html suppressHydrationWarning>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} ${roboto.className} antialiased`}
+				className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-background text-foreground`}
 			>
 				<ThemeProvider
 					attribute="class"

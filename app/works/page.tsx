@@ -1,10 +1,11 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { WorkBlock } from "@/components/organism/works/workBlock";
 import { worksContent } from "@/constant/works/works";
+import { PageAnimationWrapper } from "@/components/atom/pageAnimationWrapper";
 
 const WorksPage = () => {
 	return (
-		<>
+		<PageAnimationWrapper>
 			<Tabs defaultValue="all" className="w-full h-fit m-auto lg:w-3/4 ">
 				<TabsList className="grid w-full grid-cols-2 grid-rows-2 h-1/10 lg:grid-cols-4 lg:grid-rows-1 lg:h-1/20">
 					<TabsTrigger value="all">All</TabsTrigger>
@@ -75,7 +76,7 @@ const WorksPage = () => {
 					</div>
 				</TabsContent>
 			</Tabs>
-		</>
+		</PageAnimationWrapper>
 	);
 };
 export default WorksPage;

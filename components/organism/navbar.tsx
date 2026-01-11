@@ -18,8 +18,8 @@ export const Navibar = () => {
 	};
 
 	return (
-		<header className="w-full border-b justify-center">
-			<div className="max-w-8xl px-4 sm:px-6 lg:px-2 flex justify-between items-center h-16">
+		<header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+			<div className="flex h-16 items-center justify-between px-4 sm:px-8 lg:px-8 lg:max-w-6xl lg:mx-auto">
 				<NavigationMenu viewport={false}>
 					<NavigationMenuList className="gap-1">
 						<NavigationMenuItem className="lg:hidden">
@@ -33,8 +33,8 @@ export const Navibar = () => {
 							<LanguageSelector />
 						</NavigationMenuItem>
 						<NavigationMenuItem>
-							<Button variant="ghost" className="h-12 w-12" onClick={toggleTheme}>
-								<SunMoon size={64} />
+							<Button variant="ghost" className="h-10 w-10 md:h-12 md:w-12" onClick={toggleTheme}>
+								<SunMoon className="h-5 w-5 md:h-6 md:w-6" />
 							</Button>
 						</NavigationMenuItem>
 					</NavigationMenuList>
