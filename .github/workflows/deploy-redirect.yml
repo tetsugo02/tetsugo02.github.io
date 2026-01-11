@@ -1,0 +1,92 @@
+name: Deploy Redirect to GitHub Pages
+
+on:
+    push:
+        branches: ["main"]
+    workflow_dispatch:
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+concurrency:
+    group: "pages"
+    cancel-in-progress: false
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Create redirect page
+              run: |
+                  mkdir -p out
+                  cat > out/index.html << 'EOF'
+                  <!DOCTYPE html>
+                  <html lang="en">
+                  <head>
+                    <meta charset="UTF-8">
+                    <meta http-equiv="refresh" content="0; url=https://tetsugo02-github-io.vercel.app">
+                    <link rel="canonical" href="https://tetsugo02-github-io.vercel.app">
+                    <title>Redirecting...</title>
+                    <style>
+                      body {
+                        font-family: system-ui, -apple-system, sans-serif;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
+                        margin: 0;
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        color: white;
+                      }
+                      .container {
+                        text-align: center;
+                      }
+                      .spinner {
+                        border: 4px solid rgba(255, 255, 255, 0.3);
+                        border-radius: 50%;
+                        border-top: 4px solid white;
+                        width: 40px;
+                        height: 40px;
+                        animation: spin 1s linear infinite;
+                        margin: 20px auto;
+                      }
+                      @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                      }
+                    </style>
+                    <script>
+                      window.location.replace("https://tetsugo02-github-io.vercel.app");
+                    </script>
+                  </head>
+                  <body>
+                    <div class="container">
+                      <div class="spinner"></div>
+                      <h2>Redirecting to new site...</h2>
+                      <p>If you are not redirected automatically, <a href="https://tetsugo02-github-io.vercel.app" style="color: white; text-decoration: underline;">click here</a>.</p>
+                    </div>
+                  </body>
+                  </html>
+                  EOF
+                  touch out/.nojekyll
+
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: ./out
+
+    deploy:
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
+        needs: build
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
