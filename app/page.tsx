@@ -44,7 +44,7 @@ export default function Home() {
 					<h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
 						{t("bio.title")}
 					</h1>
-					<div className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+					<div className="max-w-2xl leading-normal text-muted-foreground sm:text-xl sm:leading-8">
 						{bioContent.main.map((item, index) => (
 							<p key={index} className="mb-2 last:mb-0">
 								{item}

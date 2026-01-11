@@ -44,7 +44,7 @@ export default function RootLayout({
 					<I18nClientProvider>
 						<SidebarProvider>
 							<div className="flex h-screen w-full">
-								<div className="flex-shrink-0 h-full">
+								<div className="shrink-0 h-full">
 									<AppSidebar />
 								</div>
 								<div className="flex flex-col flex-1 w-full overflow-hidden">

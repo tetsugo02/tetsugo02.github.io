@@ -39,7 +39,7 @@ export const Career = () => {
 				</Header>
 			</div>
 
-			<div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:-translate-x-px before:bg-gradient-to-b before:from-border before:via-muted before:to-transparent">
+			<div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:-translate-x-px before:bg-linear-to-b before:from-border before:via-muted before:to-transparent">
 				{careerContent.map((item, index) => (
 					<div key={index} className="relative pl-8 sm:pl-12">
 						<div className="absolute left-0 top-1.5 flex h-2.5 w-2.5 -translate-x-1/2 items-center justify-center rounded-full bg-background ring-2 ring-primary"></div>

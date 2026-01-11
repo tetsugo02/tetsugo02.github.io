@@ -62,7 +62,7 @@ export const LinkPreview = ({ url, className }: LinkPreviewProps) => {
 			)}
 		>
 			{data.image && (
-				<div className="relative h-auto w-32 min-w-[120px] shrink-0 overflow-hidden bg-muted sm:w-48">
+				<div className="relative h-auto w-32 min-w-30 shrink-0 overflow-hidden bg-muted sm:w-48">
 					{/* eslint-disable-next-line @next/next/no-img-element */}
 					<img
 						src={data.image}
