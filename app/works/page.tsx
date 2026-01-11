@@ -43,22 +43,22 @@ const WorksPage = () => {
 
 			<Tabs defaultValue="all" className="w-full max-w-6xl mx-auto">
 				<TabsList className="w-full flex-wrap h-auto p-1 justify-start overflow-x-auto">
-					<TabsTrigger value="all" className="flex-shrink-0">
+					<TabsTrigger value="all" className="shrink-0">
 						All
 					</TabsTrigger>
-					<TabsTrigger value="event" className="flex-shrink-0">
+					<TabsTrigger value="event" className="shrink-0">
 						Events
 					</TabsTrigger>
-					<TabsTrigger value="oss" className="flex-shrink-0">
+					<TabsTrigger value="oss" className="shrink-0">
 						OSS
 					</TabsTrigger>
-					<TabsTrigger value="article" className="flex-shrink-0">
+					<TabsTrigger value="article" className="shrink-0">
 						Articles
 					</TabsTrigger>
-					<TabsTrigger value="publication" className="flex-shrink-0">
+					<TabsTrigger value="publication" className="shrink-0">
 						Publications
 					</TabsTrigger>
-					<TabsTrigger value="other" className="flex-shrink-0">
+					<TabsTrigger value="other" className="shrink-0">
 						Other
 					</TabsTrigger>
 				</TabsList>

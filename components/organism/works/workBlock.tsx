@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { WorkBlockType } from "@/types/workBlockType";
 import { getWorkTypeBadge } from "@/lib/workHelper";
 import { LinkPreview } from "@/components/molecule/linkPreview";
-import { CalendarDays, ExternalLink, Github } from "lucide-react";
+import { CalendarDays, ExternalLink } from "lucide-react";
 import { getIconByName } from "@/lib/iconMapper";
 import {
 	Dialog,
