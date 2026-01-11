@@ -95,6 +95,7 @@ export const GithubActivityCard = ({ data }: GithubActivityCardProps) => {
 		>
 			{/* 上部：Open Graph画像 */}
 			{ogImage ? (
+				// eslint-disable-next-line @next/next/no-img-element
 				<img src={ogImage} alt="Open Graph" className="w-full object-cover" />
 			) : (
 				<div className="w-full h-40 bg-background flex items-center justify-center text-gray-400 text-sm">
