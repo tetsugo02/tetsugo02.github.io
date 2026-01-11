@@ -1,17 +1,17 @@
-import { IconType } from "react-icons/lib";
+export type WorkType = "event" | "oss" | "article" | "publication" | "other";
 
 export interface WorkBlockType {
-	title: string;
+	title: string | { ja: string; en: string };
 	workType: WorkType;
+	date?: string;
 	link?: string[];
-	description: string;
+	description: string | { ja: string; en: string };
 	badges?: BadgeType[];
+	imageUrl?: string;
 }
 
 export interface BadgeType {
 	name: string;
 	className?: string;
-	icon?: IconType;
+	iconName?: string;
 }
-
-export type WorkType = "development" | "research" | "other";

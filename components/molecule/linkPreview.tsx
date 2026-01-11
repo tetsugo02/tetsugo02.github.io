@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 interface LinkPreviewProps {
 	url: string;
 	className?: string;
+	showText?: boolean;
 }
 
 interface PreviewData {
@@ -20,7 +21,7 @@ interface PreviewData {
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export const LinkPreview = ({ url, className }: LinkPreviewProps) => {
+export const LinkPreview = ({ url, className, showText = true }: LinkPreviewProps) => {
 	const { data, error, isLoading } = useSWR<PreviewData>(
 		url ? `/api/link-preview?url=${encodeURIComponent(url)}` : null,
 		fetcher,
@@ -47,6 +48,36 @@ export const LinkPreview = ({ url, className }: LinkPreviewProps) => {
 			>
 				<ExternalLink className="h-4 w-4" />
 				<span className="truncate">{url}</span>
+			</a>
+		);
+	}
+
+	if (!showText) {
+		return (
+			<a
+				href={url}
+				target="_blank"
+				rel="noopener noreferrer"
+				className={cn(
+					"group block w-full overflow-hidden bg-muted transition-all hover:bg-muted/80",
+					className
+				)}
+			>
+				{data.image ? (
+					// eslint-disable-next-line @next/next/no-img-element
+					<img
+						src={data.image}
+						alt={data.title}
+						className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+						onError={(e) => {
+							e.currentTarget.style.display = "none";
+						}}
+					/>
+				) : (
+					<div className="flex h-full w-full items-center justify-center text-muted-foreground">
+						<ExternalLink className="h-6 w-6" />
+					</div>
+				)}
 			</a>
 		);
 	}

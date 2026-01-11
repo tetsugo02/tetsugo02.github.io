@@ -1,0 +1,119 @@
+- title:
+    ja: "Progate Hackthon 2025 - AWS賞"
+    en: "Progate Hackthon 2025 - AWS Prize"
+  workType: "event"
+  date: "2025-03"
+  link:
+    - "https://topaz.dev/projects/fe7d3c5c2705dd89510b"
+    - "https://github.com/1010mark/ProgateHack"
+  description:
+    ja: "2025年3月に行われたProgateハッカソンに参加し、AWS賞を受賞しました。"
+    en: "Participated in the Progate Hackathon in March 2025 and won the AWS Prize."
+  badges:
+    - name: "Hackathon"
+      iconName: "code"
+    - name: "AWS"
+      iconName: "cloud"
+
+- title:
+    ja: "AMD Open Robotics Hackthon 2025 - 3位"
+    en: "AMD Open Robotics Hackthon 2025 - 3rd Place"
+  workType: "event"
+  date: "2025-12"
+  description:
+    ja: "2025年12月に開催されたAMD Open Robotics Hackathon 2025に参加し、3位を獲得しました。"
+    en: "Participated in the AMD Open Robotics Hackathon 2025 held in December 2025 and secured 3rd place."
+  link:
+    - "https://amdroboticshackathon.datamonsters.com/ja-jp"
+    - "https://github.com/Mamo1031/AMD_Robotics_Hackathon_2025_Sushi_Taisho"
+  badges:
+    - name: "Hackathon"
+      iconName: "code"
+    - name: "AMD"
+      iconName: "cpu"
+
+- title: "huggingface/lerobot - Pull Request Contributions"
+  workType: "oss"
+  description:
+    ja: "huggingface/lerobot type hintの実装及びmpypyエラーの修正を行い，使用者の利便性向上に貢献しました．"
+    en: "Contributed to the implementation of type hints and fixed mpypy errors in huggingface/lerobot, enhancing user convenience."
+  link:
+    - "https://github.com/huggingface/lerobot"
+  badges:
+    - name: "Python"
+      iconName: "python"
+    - name: "Open Source"
+      iconName: "openSource"
+
+- title: "marimo-team/marimo - Pull Request Contributions"
+  workType: "oss"
+  description:
+    ja: "marimo-team/marimoのドキュメント改善やバグ修正に貢献しました。"
+    en: "Contributed to documentation improvements and bug fixes in marimo-team/marimo."
+  link:
+    - "https://github.com/marimo-team/marimo"
+  badges:
+    - name: "Python"
+      iconName: "python"
+    - name: "Typescript"
+      iconName: "typescript"
+    - name: "Open Source"
+      iconName: "openSource"
+
+- title: "keio-crl/robopy - Author"
+  workType: "oss"
+  description:
+    ja: "Dynamixel サーボモーターを使用するkochロボット及びrakuda2ロボットをPythonで制御し，テレオペレーション，データ収集と可視化，ポリシーの生成行動の出力を行うライブラリを開発しました。"
+    en: "Developed a Python library to control Koch and Rakuda2 robots using Dynamixel servo motors, enabling teleoperation, data collection and visualization, and policy generation behavior output."
+  link:
+    - "https://github.com/keio-crl/robopy"
+  badges:
+    - name: "Python"
+      iconName: "python"
+    - name: "Open Source"
+      iconName: "openSource"
+
+- title: "tetsugo02/tetsugo02 - Personal Website Source Code"
+  workType: "oss"
+  description:
+    ja: "このウェブサイトのソースコードを公開しています。"
+    en: "The source code for this personal website is publicly available."
+  link:
+    - "https://github.com/tetsugo02/tetsugo02.github.io"
+  badges:
+    - name: "TypeScript"
+      iconName: "typescript"
+    - name: "Open Source"
+      iconName: "openSource"
+
+- title:
+    ja: "SlurmによるGPUクラスタの構築手順 ①"
+    en: "Building a GPU Cluster with Slurm Part 1(Japanese)"
+  workType: "article"
+  date: "2025-08"
+  link:
+    - "https://qiita.com/tetsugo/items/9bfd84725992c7d79b7e"
+  description:
+    ja: "Slurmを用いてGPUクラスタを構築する手順を解説した記事の前編です。"
+    en: "The first part of an article explaining the steps to build a GPU cluster using Slurm."
+  badges:
+    - name: "Slurm"
+      iconName: "server"
+    - name: "GPU"
+      iconName: "gpu"
+
+- title:
+    ja: "AMD Open Robotics Hackathon 参加記"
+    en: "AMD Open Robotics Hackathon Participation Report"
+  workType: "article"
+  date: "2025-12"
+  link:
+    - "https://qiita.com/tetsugo/items/be8eb2fbcb6458e61cbb"
+  description:
+    ja: "AMD Open Robotics Hackathon 2025に参加した経験をまとめた記事です。"
+    en: "An article summarizing my experience participating in the AMD Open Robotics Hackathon 2025."
+  badges:
+    - name: "Hackathon"
+      iconName: "code"
+    - name: "AMD"
+      iconName: "cpu"
