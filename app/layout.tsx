@@ -23,6 +23,27 @@ export const metadata: Metadata = {
 	icons: {
 		icon: "/avatar.ico",
 	},
+	openGraph: {
+		title: "Tetsugo To",
+		description:
+			"Software Engineer / Researcher - Machine Learning, Computer Systems, OSS Contributor",
+		images: [
+			{
+				url: "/api/og",
+				width: 1200,
+				height: 630,
+			},
+		],
+		locale: "ja_JP",
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Tetsugo To",
+		description: "Software Engineer / Researcher",
+		images: ["/api/og"],
+	},
+	metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || "https://tetsugo02.github.io"),
 };
 
 export default function RootLayout({
