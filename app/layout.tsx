@@ -43,7 +43,9 @@ export const metadata: Metadata = {
 		description: "Software Engineer / Researcher",
 		images: ["/api/og"],
 	},
-	metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || "https://tetsugo02.github.io"),
+	metadataBase: new URL(
+		process.env.NEXT_PUBLIC_BASE_URL || "https://tetsugo02-github-io.vercel.app"
+	),
 };
 
 export default function RootLayout({
