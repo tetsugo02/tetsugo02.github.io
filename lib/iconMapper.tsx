@@ -15,7 +15,7 @@ import {
 import { BsGpuCard } from "react-icons/bs";
 import { LucideIcon } from "lucide-react";
 import { IconType } from "react-icons";
-import { FaPython, FaReact, FaAws, FaDocker, FaNodeJs, FaRust } from "react-icons/fa6";
+import { FaPython, FaReact, FaAws, FaDocker, FaNodeJs, FaRust, FaLinux } from "react-icons/fa6";
 import {
 	SiNextdotjs,
 	SiTypescript,
@@ -58,6 +58,7 @@ export const iconMap: Record<string, IconComponent> = {
 	graphql: SiGraphql,
 	go: SiGo,
 	gpu: BsGpuCard,
+	linux: FaLinux,
 };
 
 export const getIconByName = (name?: string): IconComponent | null => {

@@ -7,7 +7,7 @@
     - "https://topaz.dev/projects/fe7d3c5c2705dd89510b"
     - "https://github.com/1010mark/ProgateHack"
   description:
-    ja: "2025年3月に行われたProgateハッカソンに参加し、AWS賞を受賞しました。"
+    ja: "2025年3月に行われたProgateハッカソンに参加し，AWS賞を受賞しました．"
     en: "Participated in the Progate Hackathon in March 2025 and won the AWS Prize."
   badges:
     - name: "Hackathon"
@@ -21,7 +21,7 @@
   workType: "event"
   date: "2025-12"
   description:
-    ja: "2025年12月に開催されたAMD Open Robotics Hackathon 2025に参加し、3位を獲得しました。"
+    ja: "2025年12月に開催されたAMD Open Robotics Hackathon 2025に参加し，3位を獲得しました．"
     en: "Participated in the AMD Open Robotics Hackathon 2025 held in December 2025 and secured 3rd place."
   link:
     - "https://amdroboticshackathon.datamonsters.com/ja-jp"
@@ -48,7 +48,7 @@
 - title: "marimo-team/marimo - Pull Request Contributions"
   workType: "oss"
   description:
-    ja: "marimo-team/marimoのドキュメント改善やバグ修正に貢献しました。"
+    ja: "marimo-team/marimoのドキュメント改善やバグ修正に貢献しました．"
     en: "Contributed to documentation improvements and bug fixes in marimo-team/marimo."
   link:
     - "https://github.com/marimo-team/marimo"
@@ -63,7 +63,7 @@
 - title: "keio-crl/robopy - Author"
   workType: "oss"
   description:
-    ja: "Dynamixel サーボモーターを使用するkochロボット及びrakuda2ロボットをPythonで制御し，テレオペレーション，データ収集と可視化，ポリシーの生成行動の出力を行うライブラリを開発しました。"
+    ja: "Dynamixel サーボモーターを使用するkochロボット及びrakuda2ロボットをPythonで制御し，テレオペレーション，データ収集と可視化，ポリシーの生成行動の出力を行うライブラリを開発しました．"
     en: "Developed a Python library to control Koch and Rakuda2 robots using Dynamixel servo motors, enabling teleoperation, data collection and visualization, and policy generation behavior output."
   link:
     - "https://github.com/keio-crl/robopy"
@@ -76,7 +76,7 @@
 - title: "tetsugo02/tetsugo02 - Personal Website Source Code"
   workType: "oss"
   description:
-    ja: "このウェブサイトのソースコードを公開しています。"
+    ja: "このウェブサイトのソースコードを公開しています．"
     en: "The source code for this personal website is publicly available."
   link:
     - "https://github.com/tetsugo02/tetsugo02.github.io"
@@ -94,7 +94,7 @@
   link:
     - "https://qiita.com/tetsugo/items/9bfd84725992c7d79b7e"
   description:
-    ja: "Slurmを用いてGPUクラスタを構築する手順を解説した記事の前編です。"
+    ja: "Slurmを用いてGPUクラスタを構築する手順を解説した記事の前編です．"
     en: "The first part of an article explaining the steps to build a GPU cluster using Slurm."
   badges:
     - name: "Slurm"
@@ -110,10 +110,26 @@
   link:
     - "https://qiita.com/tetsugo/items/be8eb2fbcb6458e61cbb"
   description:
-    ja: "AMD Open Robotics Hackathon 2025に参加した経験をまとめた記事です。"
+    ja: "AMD Open Robotics Hackathon 2025に参加した経験をまとめた記事です．"
     en: "An article summarizing my experience participating in the AMD Open Robotics Hackathon 2025."
   badges:
     - name: "Hackathon"
       iconName: "code"
     - name: "AMD"
       iconName: "cpu"
+
+- title:
+    ja: "講習会「Linuxサーバーを作って壊そう！」- TA"
+    en: "Workshop 'Build and Break a Linux Server!' - TA"
+  workType: "other"
+  date: "2026-1-10"
+  link:
+    - "https://aic.keio.ac.jp/session_post/linux-server-winter"
+  description:
+    ja: "2026年1月に開催されたKeio AICの講習会「Linuxサーバーを作って壊そう！」でTAを務めました．"
+    en: "Served as a TA for the Keio AIC workshop 'Build and Break a Linux Server!' held in January 2026."
+  badges:
+    - name: "Linux"
+      iconName: "linux"
+    - name: "Server"
+      iconName: "server"
