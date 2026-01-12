@@ -23,7 +23,7 @@ export const WorkBlock = ({ title, description, link, workType, badges, date }: 
 	const workTypeBadge = getWorkTypeBadge(workType);
 	const primaryLink = link && link.length > 0 ? link[0] : null;
 
-	const currentLang = i18n.language === "ja" ? "ja" : "en";
+	const currentLang = i18n.language?.startsWith("ja") ? "ja" : "en";
 
 	const displayTitle = useMemo(() => {
 		if (typeof title === "string") return title;

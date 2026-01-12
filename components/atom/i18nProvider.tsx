@@ -16,6 +16,15 @@ export function I18nClientProvider({ children }: { children: ReactNode }) {
 			defaultNS,
 			fallbackLng,
 			lng: undefined, // 検出またはローカルストレージから取得
+			supportedLngs: ["en", "ja"],
+			nonExplicitSupportedLngs: true,
+			load: "languageOnly",
+			detection: {
+				order: ["localStorage", "navigator"],
+				caches: ["localStorage"],
+				lookupLocalStorage: "i18nextLng",
+				convertDetectedLanguage: (lng: string) => lng.split("-")[0],
+			},
 			debug: process.env.NODE_ENV === "development",
 			interpolation: {
 				escapeValue: false, // React already safes from XSS
@@ -26,10 +35,15 @@ export function I18nClientProvider({ children }: { children: ReactNode }) {
 	}, []);
 
 	useEffect(() => {
-		// クライアントサイドでの言語検出を確実にする
+		// LanguageDetector が ja-JP などを保存することがあるので正規化して維持する
 		const savedLng = localStorage.getItem("i18nextLng");
-		if (savedLng) {
-			i18n.changeLanguage(savedLng);
+		if (!savedLng) return;
+		const normalized = savedLng.split("-")[0];
+		if (normalized && normalized !== savedLng) {
+			localStorage.setItem("i18nextLng", normalized);
+		}
+		if (normalized && i18n.language !== normalized) {
+			i18n.changeLanguage(normalized);
 		}
 	}, [i18n]);
 
