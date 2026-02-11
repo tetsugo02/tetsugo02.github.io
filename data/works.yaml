@@ -24,7 +24,7 @@
     ja: "2025年12月に開催されたAMD Open Robotics Hackathon 2025に参加し，3位を獲得しました．"
     en: "Participated in the AMD Open Robotics Hackathon 2025 held in December 2025 and secured 3rd place."
   link:
-    - "https://amdroboticshackathon.datamonsters.com/ja-jp"
+    - "https://huggingface.co/blog/amd/openroboticshackathon"
     - "https://github.com/Mamo1031/AMD_Robotics_Hackathon_2025_Sushi_Taisho"
   badges:
     - name: "Hackathon"
