@@ -68,7 +68,7 @@ const works = yaml.load(fs.readFileSync(worksPath, "utf8")) ?? [];
 const primaryUrls = Array.from(
 	new Set(
 		works
-			.filter((work) => !work?.imageUrl)
+			.filter((work) => !work?.imageUrl && work?.workType !== "publication")
 			.map((work) => work?.link?.[0])
 			.filter((url) => typeof url === "string" && url.length > 0)
 	)

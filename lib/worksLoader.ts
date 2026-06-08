@@ -35,7 +35,8 @@ export const getWorksData = (): WorkBlockType[] => {
 
 		return (data || []).map((work) => {
 			const primaryLink = work.link?.[0];
-			const previewImageUrl = primaryLink ? previews[primaryLink]?.image : undefined;
+			const previewImageUrl =
+				work.workType !== "publication" && primaryLink ? previews[primaryLink]?.image : undefined;
 
 			return {
 				...work,

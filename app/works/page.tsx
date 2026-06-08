@@ -27,6 +27,8 @@ const WorkGrid = ({ type, works }: { type?: WorkType; works: WorkBlockType[] }) 
 					badges={work.badges}
 					date={work.date}
 					imageUrl={work.imageUrl}
+					authors={work.authors}
+					conference={work.conference}
 				/>
 			))}
 		</div>

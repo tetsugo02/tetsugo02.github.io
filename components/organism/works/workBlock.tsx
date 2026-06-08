@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { WorkBlockType } from "@/types/workBlockType";
 import { getWorkTypeBadge } from "@/lib/workHelper";
 import { LinkPreview } from "@/components/molecule/linkPreview";
-import { CalendarDays, ExternalLink } from "lucide-react";
+import { BookOpenText, CalendarDays, ExternalLink, Landmark, Users } from "lucide-react";
 import { getIconByName } from "@/lib/iconMapper";
 import {
 	Dialog,
@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
 import { useTranslation } from "react-i18next";
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 
 export const WorkBlock = ({
 	title,
@@ -26,6 +26,8 @@ export const WorkBlock = ({
 	badges,
 	date,
 	imageUrl,
+	authors,
+	conference,
 }: WorkBlockType) => {
 	const { i18n } = useTranslation();
 	const workTypeBadge = getWorkTypeBadge(workType);
@@ -33,15 +35,173 @@ export const WorkBlock = ({
 
 	const currentLang = i18n.language?.startsWith("ja") ? "ja" : "en";
 
-	const displayTitle = useMemo(() => {
-		if (typeof title === "string") return title;
-		return title[currentLang] || title.en || title.ja || "";
-	}, [title, currentLang]);
+	const getLocalizedText = useCallback((value?: string | { ja: string; en: string }) => {
+		if (!value) return "";
+		if (typeof value === "string") return value;
+		return value[currentLang] || value.en || value.ja || "";
+	}, [currentLang]);
 
-	const displayDescription = useMemo(() => {
-		if (typeof description === "string") return description;
-		return description[currentLang] || description.en || description.ja || "";
-	}, [description, currentLang]);
+	const displayTitle = useMemo(() => getLocalizedText(title), [getLocalizedText, title]);
+	const displayDescription = useMemo(
+		() => getLocalizedText(description),
+		[description, getLocalizedText]
+	);
+	const displayAuthors = useMemo(
+		() => authors?.map((author) => getLocalizedText(author)).filter(Boolean).join(", ") || "",
+		[authors, getLocalizedText]
+	);
+	const displayConference = useMemo(
+		() => getLocalizedText(conference),
+		[conference, getLocalizedText]
+	);
+	const stableImageAlt = typeof title === "string" ? title : title.en || title.ja || "Work preview";
+
+	if (workType === "publication") {
+		return (
+			<Dialog>
+				<DialogTrigger asChild>
+					<Card className="group flex flex-col overflow-hidden transition-all hover:shadow-lg h-full border-muted bg-card cursor-pointer">
+						{imageUrl && (
+							<div className="w-full h-32 overflow-hidden bg-muted">
+								{/* eslint-disable-next-line @next/next/no-img-element */}
+								<img
+									src={imageUrl}
+									alt={stableImageAlt}
+									className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+								/>
+							</div>
+						)}
+						<CardContent className="flex flex-col flex-1 gap-4 p-5 text-left">
+							<div className="flex items-start justify-between gap-3">
+								<div className="flex items-center gap-3 min-w-0">
+									<div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground">
+										<BookOpenText className="h-5 w-5" />
+									</div>
+									<Badge
+										variant="outline"
+										className={`${workTypeBadge.className} border-transparent px-2 py-0.5`}
+									>
+										{workTypeBadge.name}
+									</Badge>
+								</div>
+								{date && (
+									<div className="flex items-center text-xs text-muted-foreground shrink-0 pt-1">
+										<CalendarDays className="mr-1 h-3 w-3" />
+										{date}
+									</div>
+								)}
+							</div>
+							<div className="flex flex-col gap-3">
+								<h3
+									className="text-base font-bold leading-snug tracking-tight line-clamp-3"
+									suppressHydrationWarning
+								>
+									{displayTitle}
+								</h3>
+								{(displayAuthors || displayConference) && (
+									<div className="flex flex-col gap-1.5 text-xs text-muted-foreground">
+										{displayAuthors && (
+											<div className="flex items-start gap-2">
+												<Users className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+												<span className="line-clamp-2" suppressHydrationWarning>
+													{displayAuthors}
+												</span>
+											</div>
+										)}
+										{displayConference && (
+											<div className="flex items-start gap-2">
+												<Landmark className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+												<span className="line-clamp-2" suppressHydrationWarning>
+													{displayConference}
+												</span>
+											</div>
+										)}
+									</div>
+								)}
+								<p
+									className="text-sm text-muted-foreground leading-relaxed line-clamp-4"
+									suppressHydrationWarning
+								>
+									{displayDescription}
+								</p>
+							</div>
+						</CardContent>
+						<CardFooter className="p-5 pt-0 mt-auto">
+							<div className="flex flex-col gap-3 w-full">
+								{badges && badges.length > 0 && (
+									<div className="flex flex-wrap gap-1.5">
+										{badges.slice(0, 4).map((badge, index) => {
+											const Icon = getIconByName(badge.iconName);
+											return (
+												<Badge key={index} variant="secondary" className="text-xs font-normal">
+													{Icon && <Icon className="inline w-3 h-3 mr-1" />}
+													{badge.name}
+												</Badge>
+											);
+										})}
+										{badges.length > 4 && (
+											<Badge variant="outline" className="text-xs">
+												+{badges.length - 4}
+											</Badge>
+										)}
+									</div>
+								)}
+							</div>
+						</CardFooter>
+					</Card>
+				</DialogTrigger>
+				<DialogContent className="lg:max-w-2xl max-h-[90vh] flex flex-col overflow-y-auto">
+					<DialogHeader className="w-full">
+						<DialogTitle className="text-2xl font-bold text-start" suppressHydrationWarning>
+							{displayTitle}
+						</DialogTitle>
+					</DialogHeader>
+					<Separator />
+					{(displayAuthors || displayConference || date) && (
+						<div className="flex flex-col gap-2 text-sm text-muted-foreground">
+							{displayAuthors && (
+								<div className="flex items-start gap-2">
+									<Users className="mt-0.5 h-4 w-4 shrink-0" />
+									<span suppressHydrationWarning>{displayAuthors}</span>
+								</div>
+							)}
+							{displayConference && (
+								<div className="flex items-start gap-2">
+									<Landmark className="mt-0.5 h-4 w-4 shrink-0" />
+									<span suppressHydrationWarning>{displayConference}</span>
+								</div>
+							)}
+							{date && (
+								<div className="flex items-center gap-2">
+									<CalendarDays className="h-4 w-4 shrink-0" />
+									<span>{date}</span>
+								</div>
+							)}
+						</div>
+					)}
+					{link?.map((url, index) => (
+						<a
+							key={index}
+							href={url}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-primary hover:underline flex items-center gap-1 mt-1 break-all"
+						>
+							<ExternalLink className="w-4 h-4 shrink-0" />
+							{url}
+						</a>
+					))}
+					<Separator className="my-4" />
+					<p
+						className="text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed"
+						suppressHydrationWarning
+					>
+						{displayDescription}
+					</p>
+				</DialogContent>
+			</Dialog>
+		);
+	}
 
 	return (
 		<Dialog>
@@ -53,7 +213,7 @@ export const WorkBlock = ({
 							{/* eslint-disable-next-line @next/next/no-img-element */}
 							<img
 								src={imageUrl}
-								alt={displayTitle}
+								alt={stableImageAlt}
 								className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
 							/>
 						</div>
