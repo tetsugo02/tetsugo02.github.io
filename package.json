@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "pnpm generate:works-preview",
     "dev": "next dev --turbopack",
+    "generate:works-preview": "node scripts/generateWorksPreviews.mjs",
+    "generate:works-preview:refresh": "node scripts/generateWorksPreviews.mjs --refresh",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

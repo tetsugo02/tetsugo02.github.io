@@ -30,16 +30,24 @@ export async function GET(request: NextRequest) {
 
 		const title = getMetaTag("title") || $("title").text() || "";
 		const description = getMetaTag("description") || "";
-		const image = getMetaTag("image") || "";
+		const rawImage = getMetaTag("image") || "";
+		const image = rawImage ? new URL(rawImage, url).toString() : "";
 		const siteName = getMetaTag("site_name") || "";
 
-		return NextResponse.json({
-			title,
-			description,
-			image,
-			siteName,
-			url,
-		});
+		return NextResponse.json(
+			{
+				title,
+				description,
+				image,
+				siteName,
+				url,
+			},
+			{
+				headers: {
+					"Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
+				},
+			}
+		);
 	} catch (error) {
 		console.error("Error fetching preview:", error);
 		return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });

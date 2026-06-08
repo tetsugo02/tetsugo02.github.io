@@ -6,6 +6,8 @@ import { ThemeProvider } from "@/components/atom/themeProvider";
 import { AppSidebar } from "@/components/organism/appSidebar";
 import { Navibar } from "@/components/organism/navbar";
 import { I18nClientProvider } from "@/components/atom/i18nProvider";
+import { WorksPreviewPreloader } from "@/components/atom/worksPreviewPreloader";
+import { getWorksData } from "@/lib/worksLoader";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -53,6 +55,15 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const works = getWorksData();
+	const worksImageUrls = works
+		.map((work) => work.imageUrl)
+		.filter((imageUrl): imageUrl is string => Boolean(imageUrl));
+	const worksPreviewUrls = works
+		.filter((work) => !work.imageUrl)
+		.map((work) => work.link?.[0])
+		.filter((url): url is string => Boolean(url));
+
 	return (
 		<html suppressHydrationWarning>
 			<body
@@ -65,6 +76,7 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<I18nClientProvider>
+						<WorksPreviewPreloader urls={worksPreviewUrls} imageUrls={worksImageUrls} />
 						<SidebarProvider>
 							<div className="flex h-screen w-full">
 								<div className="shrink-0 h-full">

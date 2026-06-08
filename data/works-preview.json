@@ -1,0 +1,74 @@
+{
+  "https://topaz.dev/projects/fe7d3c5c2705dd89510b": {
+    "title": "Last Bite",
+    "description": "食材の在庫と消費期限を管理し、AIがレシピ提案するサービス",
+    "image": "https://ptera-publish.topaz.dev/project/01JPXX32RB8JA00WV84RM0FXEB.png",
+    "siteName": "Topa'z",
+    "url": "https://topaz.dev/projects/fe7d3c5c2705dd89510b",
+    "fetchedAt": "2026-06-08T08:02:14.327Z"
+  },
+  "https://huggingface.co/blog/amd/openroboticshackathon": {
+    "title": "Join the AMD Open Robotics Hackathon",
+    "description": "A Blog post by AMD on Hugging Face",
+    "image": "https://cdn-uploads.huggingface.co/production/uploads/691298370610df3fe9c26e5c/Bw-1bu1_WKE4yKecNn3Ru.jpeg",
+    "siteName": "",
+    "url": "https://huggingface.co/blog/amd/openroboticshackathon",
+    "fetchedAt": "2026-06-08T08:02:15.018Z"
+  },
+  "https://github.com/huggingface/lerobot": {
+    "title": "GitHub - huggingface/lerobot: 🤗 LeRobot: Making AI for Robotics more accessible with end-to-end learning",
+    "description": "🤗 LeRobot: Making AI for Robotics more accessible with end-to-end learning - huggingface/lerobot",
+    "image": "https://opengraph.githubassets.com/996c928786b64db3f87c53125cb376a850ec9216eb80d29298067ee36f9fb10e/huggingface/lerobot",
+    "siteName": "GitHub",
+    "url": "https://github.com/huggingface/lerobot",
+    "fetchedAt": "2026-06-08T08:05:36.807Z"
+  },
+  "https://github.com/marimo-team/marimo": {
+    "title": "GitHub - marimo-team/marimo: A reactive notebook for Python — run reproducible experiments, query with SQL, execute as a script, deploy as an app, and version with git. Stored as pure Python. All in a modern, AI-native editor.",
+    "description": "A reactive notebook for Python — run reproducible experiments, query with SQL, execute as a script, deploy as an app, and version with git. Stored as pure Python. All in a modern, AI-native editor. - marimo-team/marimo",
+    "image": "https://opengraph.githubassets.com/d7ab1ad51a44e70827ed9886dafe439b9286e542dd38322767aa15f3c63e4ec2/marimo-team/marimo",
+    "siteName": "GitHub",
+    "url": "https://github.com/marimo-team/marimo",
+    "fetchedAt": "2026-06-08T08:02:40.073Z"
+  },
+  "https://github.com/keio-crl/robopy": {
+    "title": "GitHub - keio-crl/robopy: A python interface to control robots which use dynamixel motors",
+    "description": "A python interface to control robots which use dynamixel motors - keio-crl/robopy",
+    "image": "https://opengraph.githubassets.com/c3893d6651f42b1478ab0ccff080fc421d9d728cad5cee2bf4f7910158a5788d/keio-crl/robopy",
+    "siteName": "GitHub",
+    "url": "https://github.com/keio-crl/robopy",
+    "fetchedAt": "2026-06-08T08:02:52.312Z"
+  },
+  "https://github.com/tetsugo02/tetsugo02.github.io": {
+    "title": "GitHub - tetsugo02/tetsugo02.github.io",
+    "description": "Contribute to tetsugo02/tetsugo02.github.io development by creating an account on GitHub.",
+    "image": "https://opengraph.githubassets.com/13bde05b85aec0df60aa7169a5b7cf65cef5a365c39bd884f42f89444ef9e852/tetsugo02/tetsugo02.github.io",
+    "siteName": "GitHub",
+    "url": "https://github.com/tetsugo02/tetsugo02.github.io",
+    "fetchedAt": "2026-06-08T08:04:22.985Z"
+  },
+  "https://qiita.com/tetsugo/items/9bfd84725992c7d79b7e": {
+    "title": "SlurmによるGPUクラスタの構築手順 ① - Qiita",
+    "description": "はじめに 1 Intro こんにちは、今年の4月から研究室配属になった新B4の学生です。 研究室内で学習環境を整備し、GPUクラスタとジョブスケジューラを構築することになったが、ネット上の情報が少なく、参考にしづらかったです。したがってこの記事ではジョブスケジューラであ...",
+    "image": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkYwJTJGMzYzMjIxOCUyRnByb2ZpbGUtaW1hZ2VzJTJGMTc1MTM4NDgzNj9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9OTJkYmNiZGYyNjgzMTU0M2I1MmM3MzNiOGQ4ZmNkN2M%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D2f138968b02ac4c893314472c3fb6231?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9U2x1cm0lRTMlODElQUIlRTMlODIlODglRTMlODIlOEJHUFUlRTMlODIlQUYlRTMlODMlQTklRTMlODIlQjklRTMlODIlQkYlRTMlODElQUUlRTYlQTclOEIlRTclQUYlODklRTYlODklOEIlRTklQTAlODYlMjAlRTIlOTElQTAmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz1kNjg4YmUwMzhhNzkzMGU3ZmVjMTAxYjJhOWQzY2MzYg&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDB0ZXRzdWdvJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9N2I2ZTRhN2JjNGM3NzQ3MjFkMjgwMjIwODFkMDY4YjM&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=73ee0c6361f92fca437e37246b63d47e",
+    "siteName": "Qiita",
+    "url": "https://qiita.com/tetsugo/items/9bfd84725992c7d79b7e",
+    "fetchedAt": "2026-06-08T08:03:04.061Z"
+  },
+  "https://qiita.com/tetsugo/items/be8eb2fbcb6458e61cbb": {
+    "title": "AMD Open Robotics Hackathon 参加記 - Qiita",
+    "description": "この記事は Computer Society Advent Calendar 2025 の25日目の記事です。 はじめに AMD Open Robotic Hackthonに参加して、なんと3位に入賞しました！この記事では、ハッカソンの概要や、私たちが作った「回転寿司ロ...",
+    "image": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Fadvent-calendar-ogp-background-7940cd1c8db80a7ec40711d90f43539e.jpg%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkYwJTJGMzYzMjIxOCUyRnByb2ZpbGUtaW1hZ2VzJTJGMTc1MTM4NDgzNj9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9OTJkYmNiZGYyNjgzMTU0M2I1MmM3MzNiOGQ4ZmNkN2M%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D93d86b97f97d974fc138aa8086d4e718?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9QU1EJTIwT3BlbiUyMFJvYm90aWNzJTIwSGFja2F0aG9uJTIwJUU1JThGJTgyJUU1JThBJUEwJUU4JUE4JTk4JnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjMzQTNDM0MmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9YmVjYTg4ODczNTQyY2NmZmI2NmY5NTBjMThhMmM1ODA&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDB0ZXRzdWdvJnR4dC1jb2xvcj0lMjMzQTNDM0MmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9MzI3NGEwNzg1ZWFmNTMzYjBiMTAzNGUzMWExYWQ0ZWQ&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=3f9d5e0072784501cb7f18c4ddde6a8f",
+    "siteName": "Qiita",
+    "url": "https://qiita.com/tetsugo/items/be8eb2fbcb6458e61cbb",
+    "fetchedAt": "2026-06-08T08:03:04.288Z"
+  },
+  "https://aic.keio.ac.jp/session_post/linux-server-winter": {
+    "title": "Linuxサーバを作って壊そう！ | AIC：慶應義塾大学AI・プログラミング学習団体",
+    "description": "講習会概要 Linuxサーバを構築して、ところどころで意図的に問題を起こして解決をしていくことでサーバ構築、管理について実戦形式で学ぶハンズオン式講義です。 AICからは小さな仮想マシンをリモートで貸し出し、クリーンなLinuxから順を追っ",
+    "image": "https://aic.keio.ac.jp/wps/wp-content/uploads/2025/06/c0dc3922e6942a79d75aa6d77a553c1f.png",
+    "siteName": "AIC：慶應義塾大学AI・プログラミング学習団体",
+    "url": "https://aic.keio.ac.jp/session_post/linux-server-winter",
+    "fetchedAt": "2026-06-08T08:03:05.212Z"
+  }
+}

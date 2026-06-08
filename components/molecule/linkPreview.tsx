@@ -1,9 +1,17 @@
 "use client";
 
-import useSWR from "swr";
+import { useEffect } from "react";
+import useSWR, { useSWRConfig } from "swr";
 import { Skeleton } from "../ui/skeleton";
 import { ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+	fetchLinkPreview,
+	getLinkPreviewKey,
+	readCachedLinkPreview,
+	writeCachedLinkPreview,
+	type PreviewData,
+} from "@/lib/linkPreviewCache";
 
 interface LinkPreviewProps {
 	url: string;
@@ -11,25 +19,33 @@ interface LinkPreviewProps {
 	showText?: boolean;
 }
 
-interface PreviewData {
-	title: string;
-	description: string;
-	image: string;
-	siteName: string;
-	url: string;
-}
-
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
-
 export const LinkPreview = ({ url, className, showText = true }: LinkPreviewProps) => {
+	const key = getLinkPreviewKey(url);
+	const { mutate } = useSWRConfig();
 	const { data, error, isLoading } = useSWR<PreviewData>(
-		url ? `/api/link-preview?url=${encodeURIComponent(url)}` : null,
-		fetcher,
+		key,
+		async (key: string) => {
+			const data = await fetchLinkPreview(key);
+			writeCachedLinkPreview(key, data);
+			return data;
+		},
 		{
+			dedupingInterval: 1000 * 60 * 60,
+			revalidateIfStale: false,
 			revalidateOnFocus: false,
+			revalidateOnReconnect: false,
 			shouldRetryOnError: false,
 		}
 	);
+
+	useEffect(() => {
+		if (!key || data) return;
+
+		const cachedData = readCachedLinkPreview(key);
+		if (cachedData) {
+			mutate(key, cachedData, { revalidate: false });
+		}
+	}, [data, key, mutate]);
 
 	if (isLoading) {
 		return <Skeleton className={cn("h-32 w-full rounded-lg", className)} />;

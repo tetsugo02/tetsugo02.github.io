@@ -18,7 +18,15 @@ import { Separator } from "@/components/ui/separator";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
 
-export const WorkBlock = ({ title, description, link, workType, badges, date }: WorkBlockType) => {
+export const WorkBlock = ({
+	title,
+	description,
+	link,
+	workType,
+	badges,
+	date,
+	imageUrl,
+}: WorkBlockType) => {
 	const { i18n } = useTranslation();
 	const workTypeBadge = getWorkTypeBadge(workType);
 	const primaryLink = link && link.length > 0 ? link[0] : null;
@@ -40,7 +48,16 @@ export const WorkBlock = ({ title, description, link, workType, badges, date }: 
 			<DialogTrigger asChild>
 				<Card className="group flex flex-col overflow-hidden transition-all hover:shadow-lg h-full border-muted bg-card cursor-pointer">
 					{/* Preview Area */}
-					{primaryLink ? (
+					{imageUrl ? (
+						<div className="w-full h-40 overflow-hidden bg-muted">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img
+								src={imageUrl}
+								alt={displayTitle}
+								className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+							/>
+						</div>
+					) : primaryLink ? (
 						<div className="w-full h-40 overflow-hidden">
 							<LinkPreview
 								url={primaryLink}
