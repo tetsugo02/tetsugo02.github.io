@@ -150,7 +150,7 @@
     ja: "人工知能学会全国大会2026"
     en: "JSAI 2026 Annual Conference"
   link:
-    - "https://pub.confit.atlas.jp/ja/event/jsai2026/presentation/1E4-OS-39b-03"
+    - "https://doi.org/10.11517/pjsai.JSAI2026.0_1E4OS39b03"
   description:
     ja: "日本人工知能学会全国大会2026で発表した論文です．感覚信頼度に基づく動的モダリティ統合を用いて，マルチモーダル世界モデルを構築する手法を提案しました．"
     en: "A paper presented at the JSAI 2026 Annual Conference. We proposed a method for constructing multimodal world models using dynamic modality integration based on sensory reliability."
