@@ -12,6 +12,6 @@ export const useInitData = () => {
 			setGithubEventData(events);
 		};
 		fetchData();
-	}, []);
+	}, [setGithubEventData]);
 	return { githubEventData };
 };

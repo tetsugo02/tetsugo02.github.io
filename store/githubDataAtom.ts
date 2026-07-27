@@ -32,10 +32,16 @@ export type GithubEvent = {
 			html_url: string;
 		};
 		action?: string;
-		issue?: any;
-		comment?: any;
-		pages?: any[];
-		pull_request?: any;
+		issue?: {
+			title?: string;
+			html_url?: string;
+		};
+		comment?: unknown;
+		pages?: unknown[];
+		pull_request?: {
+			title?: string;
+			html_url?: string;
+		};
 		ref_type?: string;
 		ref?: string;
 	};

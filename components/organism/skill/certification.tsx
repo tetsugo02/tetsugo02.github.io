@@ -1,40 +1,20 @@
-"use client";
-
-import { Header } from "@/components/atom/header";
-import { Card } from "@/components/ui/card";
-import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
-
-export const Certification = () => {
-	const { t, i18n } = useTranslation("skills");
-	const [isReady, setIsReady] = useState(false);
-
-	useEffect(() => {
-		if (i18n.isInitialized) {
-			setIsReady(true);
-		} else {
-			const handleInit = () => setIsReady(true);
-			i18n.on("initialized", handleInit);
-			return () => i18n.off("initialized", handleInit);
-		}
-	}, [i18n]);
-
-	if (!isReady) {
-		return <div>Loading...</div>;
-	}
-
-	const certifications = t("skills.certifications", { returnObjects: true }) as { name: string }[];
-
-	return (
-		<div className="justify-items-start w-full px-2 flex flex-col gap-4">
-			<Header level="h3">{t("skillsSection.certifications")}</Header>
-			<Card className="w-full h-full shadow-none p-2 overflow-y-scroll">
-				<ul className="list-disc list-outside m-6 text-lg font-semibold">
-					{certifications.map((cert, index) => (
-						<li key={index}>{cert.name}</li>
-					))}
-				</ul>
-			</Card>
-		</div>
-	);
-};
+export const Certification = ({
+	title,
+	certifications,
+}: {
+	title: string;
+	certifications: readonly { name: string }[];
+}) => (
+	<section className="h-full rounded-xl border border-border bg-card p-5 shadow-sm sm:p-6">
+		<h2 className="text-xl font-semibold">
+			{title}
+		</h2>
+		<ul className="mt-6 list-disc space-y-3 pl-5">
+			{certifications.map((certification) => (
+				<li key={certification.name} className="pl-1 leading-7 marker:text-muted-foreground">
+					{certification.name}
+				</li>
+			))}
+		</ul>
+	</section>
+);

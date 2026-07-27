@@ -13,6 +13,14 @@ export interface WorkBlockType {
 	imageUrl?: string;
 }
 
+export interface ResolvedWorkBlockType
+	extends Omit<WorkBlockType, "title" | "description" | "authors" | "conference"> {
+	title: string;
+	description: string;
+	authors?: string[];
+	conference?: string;
+}
+
 export interface BadgeType {
 	name: string;
 	className?: string;

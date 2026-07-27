@@ -1,10 +1,41 @@
 {
-	"about": "About",
-	"skillsPage": "Skills",
-	"works": "Works",
-	"experience": "Experience",
+	"siteName": "Tetsugo To",
+	"navigation": {
+		"about": "About",
+		"skills": "Skills",
+		"works": "Works"
+	},
 	"languages": {
 		"english": "English",
 		"japanese": "Japanese"
+	},
+	"controls": {
+		"changeLanguage": "Change language",
+		"changeTheme": "Change theme",
+		"openMenu": "Open menu",
+		"close": "Close"
+	},
+	"works": {
+		"title": "Selected Works",
+		"intro": "Projects, open-source contributions, articles, and research.",
+		"filters": {
+			"all": "All",
+			"event": "Events",
+			"oss": "Open Source",
+			"article": "Articles",
+			"publication": "Publications",
+			"other": "Other"
+		},
+		"empty": "No works found.",
+		"noPreview": "No preview available",
+		"viewDetails": "View details",
+		"links": "Links",
+		"types": {
+			"event": "Event",
+			"oss": "Open Source",
+			"article": "Article",
+			"publication": "Publication",
+			"other": "Other"
+		}
 	}
 }

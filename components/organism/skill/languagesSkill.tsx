@@ -1,45 +1,43 @@
-"use client";
+import type { LanguageLevel } from "@/types/languageLevel";
 
-import { CardContent } from "@/components/ui/card";
-import { LanguageCard } from "@/components/molecules/languageCard";
-import { getLanguageLevel } from "@/constant/skills/languageLevel";
-import { Header } from "@/components/atom/header";
-import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
-
-export const LanguagesSkill = () => {
-	const { t, i18n } = useTranslation("skills");
-	const [isReady, setIsReady] = useState(false);
-
-	useEffect(() => {
-		if (i18n.isInitialized) {
-			setIsReady(true);
-		} else {
-			const handleInit = () => setIsReady(true);
-			i18n.on("initialized", handleInit);
-			return () => i18n.off("initialized", handleInit);
-		}
-	}, [i18n]);
-
-	if (!isReady) {
-		return <div>Loading...</div>;
-	}
-
-	const languageLevel = getLanguageLevel(t);
-
-	return (
-		<div className="justify-items-start w-full px-2 flex flex-col gap-4">
-			<Header level="h3">{t("skillsSection.languages")}</Header>
-			<CardContent className="grid grid-cols-1 lg:grid-cols-2 gap-4 mx-0 px-0">
-				{languageLevel.map((language) => (
-					<LanguageCard
-						key={language.name}
-						name={language.name}
-						percentage={language.percentage}
-						description={language.description}
-					/>
-				))}
-			</CardContent>
-		</div>
-	);
-};
+export const LanguagesSkill = ({
+	title,
+	languages,
+}: {
+	title: string;
+	languages: readonly LanguageLevel[];
+}) => (
+	<section className="h-full rounded-xl border border-border bg-card p-5 shadow-sm sm:p-6">
+		<h2 className="text-xl font-semibold">
+			{title}
+		</h2>
+		<ul className="mt-6 space-y-6">
+			{languages.map((language) => (
+				<li key={language.name}>
+					<div className="flex items-baseline justify-between gap-4">
+						<h3 className="text-lg font-medium">{language.name}</h3>
+						<span className="text-xs tabular-nums text-muted-foreground">
+							{language.percentage}%
+						</span>
+					</div>
+					<div
+						className="mt-3 h-2 w-full overflow-hidden rounded-full bg-muted"
+						role="progressbar"
+						aria-label={language.name}
+						aria-valuemin={0}
+						aria-valuemax={100}
+						aria-valuenow={language.percentage}
+					>
+						<div
+							className="h-full rounded-full bg-primary"
+							style={{ width: `${language.percentage}%` }}
+						/>
+					</div>
+					<p className="mt-3 text-sm leading-6 text-muted-foreground">
+						{language.description}
+					</p>
+				</li>
+			))}
+		</ul>
+	</section>
+);

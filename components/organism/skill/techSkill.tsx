@@ -1,56 +1,30 @@
-"use client";
-
-import { Header } from "@/components/atom/header";
-import { Card, CardContent } from "@/components/ui/card";
 import { getTechSkillList } from "@/constant/skills/techSkillGrid";
-import { Tooltip, TooltipTrigger, TooltipContent } from "@radix-ui/react-tooltip";
-import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
 
-export const TechSkill = () => {
-	const { t, i18n } = useTranslation("skills");
-	const [isReady, setIsReady] = useState(false);
-
-	useEffect(() => {
-		if (i18n.isInitialized) {
-			setIsReady(true);
-		} else {
-			const handleInit = () => setIsReady(true);
-			i18n.on("initialized", handleInit);
-			return () => i18n.off("initialized", handleInit);
-		}
-	}, [i18n]);
-
-	if (!isReady) {
-		return <div>Loading...</div>;
-	}
-
-	const techSkillList = getTechSkillList(t);
+export const TechSkill = ({
+	title,
+	skills,
+}: {
+	title: string;
+	skills: readonly { name: string }[];
+}) => {
+	const techSkillList = getTechSkillList(skills);
 
 	return (
-		<div className="justify-items-start w-full px-2 flex flex-col gap-4">
-			<Header level="h3">{t("skillsSection.technical")}</Header>
-			<Card className="w-full h-full shadow-none">
-				<CardContent className=" flex flex-row flex-wrap gap-2">
-					{techSkillList.map((skill, index) => {
-						return (
-							<Tooltip key={index}>
-								<TooltipTrigger asChild>
-									<Card
-										className="py-0 min-w-14 min-h-14 items-center justify-center hover:shadow-lg transition-shadaw ease-in-out"
-										key={index}
-									>
-										<skill.icon size={32} />
-									</Card>
-								</TooltipTrigger>
-								<TooltipContent side="bottom" className="bg-background shadow-lg rounded-2xl  p-2">
-									<p className="text-sm font-semibold">{skill.name}</p>
-								</TooltipContent>
-							</Tooltip>
-						);
-					})}
-				</CardContent>
-			</Card>
-		</div>
+		<section className="rounded-xl border border-border bg-card p-5 shadow-sm sm:p-6">
+			<h2 className="text-xl font-semibold">
+				{title}
+			</h2>
+			<ul className="mt-6 grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-9">
+				{techSkillList.map((skill) => (
+					<li
+						key={skill.name}
+						className="flex min-h-24 flex-col items-center justify-center gap-3 rounded-lg border border-border bg-background p-3 text-center transition-shadow hover:shadow-md"
+					>
+						<skill.icon aria-hidden="true" className="size-7" />
+						<span className="text-xs font-medium leading-4">{skill.name}</span>
+					</li>
+				))}
+			</ul>
+		</section>
 	);
 };

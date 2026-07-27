@@ -1,28 +1,30 @@
 {
 	"skillsSection": {
-		"certifications": "Certifications",
-		"languages": "Languages",
-		"technical": "Technical Skills"
+		"certifications": "資格",
+		"languages": "言語",
+		"technical": "技術スキル"
 	},
+	"title": "スキル",
+	"intro": "研究のアイデアを信頼できるソフトウェアにするために使っている技術と言語。",
 	"skills": {
 		"languageSkills": [
 			{
-				"name": "English",
+				"name": "英語",
 				"percentage": 70,
 				"description": "ビジネスレベル、技術文書の理解と基本的な会話が可能です。"
 			},
 			{
-				"name": "Chinese",
+				"name": "中国語",
 				"percentage": 100,
 				"description": "母国語、全ての面で流暢です。"
 			},
 			{
-				"name": "Japanese",
+				"name": "日本語",
 				"percentage": 95,
 				"description": "バイリンガル、全ての面で流暢です。"
 			},
 			{
-				"name": "French",
+				"name": "フランス語",
 				"percentage": 10,
 				"description": "基本的な理解があり、簡単な挨拶が可能です。"
 			}

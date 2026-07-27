@@ -1,42 +1,32 @@
 "use client";
 
-import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "../ui/select";
-import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import type { Locale } from "@/i18n";
 
-export const LanguageSelector = () => {
-	const { i18n, t } = useTranslation();
-	const currentValue = i18n.language?.startsWith("ja") ? "ja" : "en";
-
-	const changeLanguage = (value: string) => {
-		const normalized = value.split("-")[0];
-		i18n.changeLanguage(normalized);
-		// オプション：言語設定をローカルストレージに保存
-		localStorage.setItem("i18nextLng", normalized);
-	};
-
-	// 初期言語設定の適用
-	useEffect(() => {
-		const savedLang = localStorage.getItem("i18nextLng");
-		if (!savedLang) return;
-		const normalized = savedLang.split("-")[0];
-		if (normalized && normalized !== savedLang) {
-			localStorage.setItem("i18nextLng", normalized);
-		}
-		if (normalized && i18n.language !== normalized) {
-			i18n.changeLanguage(normalized);
-		}
-	}, [i18n]);
+export const LanguageSelector = ({
+	locale,
+	label,
+}: {
+	locale: Locale;
+	label: string;
+}) => {
+	const pathname = usePathname();
+	const nextLocale: Locale = locale === "ja" ? "en" : "ja";
+	const nextPath = pathname.replace(/^\/(ja|en)(?=\/|$)/, `/${nextLocale}`);
 
 	return (
-		<Select value={currentValue} onValueChange={changeLanguage}>
-			<SelectTrigger className="w-32">
-				<SelectValue placeholder={currentValue === "en" ? "English" : "日本語"} />
-			</SelectTrigger>
-			<SelectContent>
-				<SelectItem value="en">{t("languages.english")}</SelectItem>
-				<SelectItem value="ja">{t("languages.japanese")}</SelectItem>
-			</SelectContent>
-		</Select>
+		<Link
+			href={nextPath}
+			hrefLang={nextLocale}
+			lang={nextLocale}
+			aria-label={`${label}: ${nextLocale === "ja" ? "日本語" : "English"}`}
+			onClick={() => {
+				document.cookie = `NEXT_LOCALE=${nextLocale}; path=/; max-age=31536000; SameSite=Lax`;
+			}}
+			className="flex h-9 min-w-11 items-center justify-center rounded-sm px-2 text-xs font-semibold tracking-[0.14em] text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+		>
+			{nextLocale.toUpperCase()}
+		</Link>
 	);
 };

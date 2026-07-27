@@ -4,6 +4,8 @@
 		"languages": "Languages",
 		"technical": "Technical Skills"
 	},
+	"title": "Skills",
+	"intro": "Tools and languages I use to turn research ideas into dependable software.",
 	"skills": {
 		"languageSkills": [
 			{
@@ -14,17 +16,17 @@
 			{
 				"name": "Chinese",
 				"percentage": 100,
-				"description": "Mother tongue, fluent in all aspects of the language."
+				"description": "Native proficiency."
 			},
 			{
 				"name": "Japanese",
 				"percentage": 95,
-				"description": "Bilingual, fluent in all aspects of the language."
+				"description": "Bilingual proficiency."
 			},
 			{
 				"name": "French",
 				"percentage": 10,
-				"description": "Basic understanding, can have simple greetings"
+				"description": "Basic understanding and simple greetings."
 			}
 		],
 		"technicalSkills": [

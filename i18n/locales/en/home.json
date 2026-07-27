@@ -1,11 +1,11 @@
 {
 	"bio": {
 		"title": "About Me",
-		"subtitle": "Software Engineer",
+		"eyebrow": "Software Engineer · Researcher",
+		"subtitle": "I build reliable systems and explore intelligent machines.",
 		"main": [
-			"I am a undergraduate student at the Keio University in Japan",
-			"I also work as a Research Engineer intern.",
-			"At the same time, I am a OSS contributor."
+			"I am an undergraduate student at Keio University in Japan.",
+			"I work as a research engineer intern and contribute to open-source software."
 		],
 		"interests": ["Machine Learning", "Computer Network", "Operating System"],
 		"education": [
@@ -36,12 +36,16 @@
 		"title": "Education"
 	},
 	"career": {
-		"title": "Work Experience"
+		"title": "Experience"
 	},
 	"interests": {
 		"title": "Interests"
 	},
 	"workExperience": {
 		"title": "Activities"
+	},
+	"contact": {
+		"title": "Elsewhere",
+		"description": "Find my code and professional profile online."
 	}
 }
