@@ -1,7 +1,7 @@
 "use client";
 
 import { ImageOff } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export const OgPreviewImage = ({
@@ -19,6 +19,21 @@ export const OgPreviewImage = ({
 }) => {
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [hasError, setHasError] = useState(false);
+	const imageRef = useRef<HTMLImageElement | null>(null);
+
+	useEffect(() => {
+		setIsLoaded(false);
+		setHasError(false);
+
+		const image = imageRef.current;
+		if (!image?.complete) return;
+
+		if (image.naturalWidth > 0) {
+			setIsLoaded(true);
+		} else {
+			setHasError(true);
+		}
+	}, [src]);
 
 	return (
 		<div className={cn("relative overflow-hidden bg-muted/40", className)}>
@@ -37,6 +52,7 @@ export const OgPreviewImage = ({
 			) : (
 				// eslint-disable-next-line @next/next/no-img-element
 				<img
+					ref={imageRef}
 					src={src}
 					alt={alt}
 					loading="lazy"
