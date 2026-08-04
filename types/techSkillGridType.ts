@@ -1,8 +1,10 @@
-import { IconType } from "react-icons/lib";
+import type { IconifyIcon } from "@iconify/react";
 
 export type TechSkillGridInterface = {
 	name: string;
-	icon: IconType;
+	icon: IconifyIcon;
+	color?: string;
+	className?: string;
 	href?: string;
 	description?: string;
 };

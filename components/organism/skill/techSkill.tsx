@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react/offline";
 import { getTechSkillList } from "@/constant/skills/techSkillGrid";
 
 export const TechSkill = ({
@@ -20,7 +21,12 @@ export const TechSkill = ({
 						key={skill.name}
 						className="flex min-h-24 flex-col items-center justify-center gap-3 rounded-lg border border-border bg-background p-3 text-center transition-shadow hover:shadow-md"
 					>
-						<skill.icon aria-hidden="true" className="size-7" />
+						<Icon
+							icon={skill.icon}
+							aria-hidden="true"
+							className={`size-7 ${skill.className ?? ""}`}
+							style={skill.color ? { color: skill.color } : undefined}
+						/>
 						<span className="text-xs font-medium leading-4">{skill.name}</span>
 					</li>
 				))}
