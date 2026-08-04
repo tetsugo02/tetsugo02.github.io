@@ -16,6 +16,8 @@
 # next.js
 /.next/
 /out/
+/public/generated/experience/
+/.cache/experience-preview.json
 
 # production
 /build

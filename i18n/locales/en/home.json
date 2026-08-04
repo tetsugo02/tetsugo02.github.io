@@ -4,7 +4,7 @@
 		"eyebrow": "Software Engineer · Researcher",
 		"subtitle": "I build reliable systems and explore intelligent machines.",
 		"main": [
-			"I am an undergraduate student at Keio University in Japan.",
+			"I am an master program student at Keio University in Japan.",
 			"I work as a research engineer intern and contribute to open-source software."
 		],
 		"interests": ["Machine Learning", "Computer Network", "Operating System"],
@@ -27,7 +27,8 @@
 				"title": "AI Engineer Intern",
 				"company": "KPMG FAS",
 				"period": "Sep 2026",
-				"url": "https://kpmg.com/jp/ja/about/fas.html"
+				"url": "https://kpmg.com/jp/en/about/fas.html",
+				"ogUrl": "https://recruit.kpmg-fas.jp/assets/favicons/og_img.png"
 			},
 			{
 				"title": "Machine Learning Engineer Intern",
@@ -40,7 +41,7 @@
 				"company": "Keio AIC",
 				"period": "2025/12 ~ Present",
 				"description": "Working on building and maintaining GPU clusters for AI research.",
-				"url": "https://aic.keio.ac.jp/"
+				"url": "https://aic.keio.ac.jp/en/"
 			}
 		]
 	},

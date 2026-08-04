@@ -9,6 +9,7 @@
     "generate:works-preview:refresh": "node scripts/generateWorksPreviews.mjs --refresh",
     "generate:experience-preview": "node --import tsx scripts/generateExperiencePreviews.ts",
     "generate:experience-preview:refresh": "node --import tsx scripts/generateExperiencePreviews.ts --refresh",
+    "generate:experience-preview:static": "node --import tsx scripts/generateExperiencePreviews.ts --static",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

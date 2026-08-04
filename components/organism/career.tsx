@@ -1,16 +1,8 @@
 import { ArrowUpRight, BriefcaseBusiness, CalendarDays } from "lucide-react";
 import { OgPreviewImage } from "@/components/ui/ogPreviewImage";
-import experiencePreviews from "@/data/experience-preview.json";
+import { getExperiencePreviews } from "@/lib/experienceLoader";
+import { getExperiencePreviewKey } from "@/lib/experiencePreviewKey";
 import type { CareerContent } from "@/types/bioType";
-
-type ExperiencePreview = {
-	title?: string;
-	description?: string;
-	image?: string;
-	siteName?: string;
-};
-
-const previews = experiencePreviews as Record<string, ExperiencePreview>;
 
 export const Career = ({
 	title,
@@ -20,6 +12,7 @@ export const Career = ({
 	items: readonly CareerContent[];
 }) => {
 	if (items.length === 0) return null;
+	const previews = getExperiencePreviews();
 
 	return (
 		<section aria-labelledby="experience-heading">
@@ -34,8 +27,11 @@ export const Career = ({
 
 			<ol className="mt-5 space-y-5">
 				{items.map((item) => {
-					const preview = item.url ? previews[item.url] : undefined;
-					const previewLabel = preview?.siteName || (item.url && new URL(item.url).hostname) || item.company;
+					const previewKey = item.url
+						? getExperiencePreviewKey(item.url, item.ogUrl)
+						: undefined;
+					const preview = previewKey ? previews[previewKey] : undefined;
+					const previewLabel = item.company;
 
 					return (
 						<li key={`${item.company}-${item.period}`}>
@@ -67,7 +63,7 @@ export const Career = ({
 												rel="noopener noreferrer"
 												className="mt-auto inline-flex w-fit items-center gap-1.5 pt-6 text-sm font-semibold underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
 											>
-												{preview?.siteName || new URL(item.url).hostname}
+												{item.company}
 												<ArrowUpRight aria-hidden="true" className="size-4" />
 											</a>
 										)}
@@ -78,7 +74,7 @@ export const Career = ({
 											href={item.url}
 											target="_blank"
 											rel="noopener noreferrer"
-											aria-label={`${item.company}: ${preview.title || item.title}`}
+											aria-label={`${item.company}: ${item.title}`}
 											className="relative block aspect-[1200/630] overflow-hidden border-t border-border bg-muted/40 md:aspect-auto md:min-h-full md:border-l md:border-t-0"
 										>
 											<OgPreviewImage
@@ -89,7 +85,7 @@ export const Career = ({
 											/>
 											<div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-4 pb-4 pt-12 text-white">
 												<p className="line-clamp-2 text-sm font-medium leading-5">
-													{preview.title || item.company}
+													{item.company}
 												</p>
 											</div>
 										</a>

@@ -2,10 +2,10 @@
 	"bio": {
 		"title": "自己紹介",
 		"eyebrow": "ソフトウェアエンジニア · 研究者",
-		"subtitle": "信頼できるシステムをつくり、知能機械の可能性を探っています。",
+		"subtitle": "信頼できるシステムをつくり、知能機械の可能性を探っています．",
 		"main": [
-			"慶應義塾大学の学部生です。",
-			"リサーチエンジニアインターンとして働きながら、オープンソース開発にも取り組んでいます。"
+			"慶應義塾大学の修士過程に所属します．",
+			"リサーチエンジニアインターンとして働きながら、オープンソース開発にも取り組んでいます．"
 		],
 		"interests": ["機械学習", "コンピュータネットワーク", "オペレーティングシステム"],
 		"education": [
@@ -27,19 +27,20 @@
 				"title": "AIエンジニア インターン",
 				"company": "KPMG FAS",
 				"period": "2026年9月",
-				"url": "https://kpmg.com/jp/ja/about/fas.html"
+				"url": "https://kpmg.com/jp/ja/about/fas.html",
+				"ogUrl": "https://recruit.kpmg-fas.jp/assets/favicons/og_img.png"
 			},
 			{
 				"title": "機械学習エンジニア インターン",
 				"company": "LINEヤフー株式会社",
 				"period": "2026年8月 – 9月",
-				"url": "https://www.lycorp.co.jp/en/"
+				"url": "https://www.lycorp.co.jp/ja/"
 			},
 			{
 				"title": "サーバーチーム インターン",
 				"company": "慶應義塾大学 AIC",
 				"period": "2025/12 ~ 現在",
-				"description": "AI研究のためのGPUクラスターの構築と保守に取り組んでいます。",
+				"description": "AI研究のためのGPUクラスターの構築と保守に取り組んでいます．",
 				"url": "https://aic.keio.ac.jp/"
 			}
 		]
@@ -58,6 +59,6 @@
 	},
 	"contact": {
 		"title": "リンク",
-		"description": "コードやプロフィールはこちらからご覧いただけます。"
+		"description": "コードやプロフィールはこちらからご覧いただけます．"
 	}
 }

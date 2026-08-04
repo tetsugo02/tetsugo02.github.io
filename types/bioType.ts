@@ -9,6 +9,7 @@ export interface CareerContent {
 	period: string;
 	description?: string;
 	url?: string;
+	ogUrl?: string;
 }
 
 export type BioContentType = {
