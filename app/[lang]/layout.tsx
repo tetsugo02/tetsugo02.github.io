@@ -5,8 +5,6 @@ import { notFound } from "next/navigation";
 import { ThemeProvider } from "@/components/atom/themeProvider";
 import { Navibar } from "@/components/organism/navbar";
 import { AppSidebar } from "@/components/organism/appSidebar";
-import { WorksPreviewPreloader } from "@/components/atom/worksPreviewPreloader";
-import { getWorksData } from "@/lib/worksLoader";
 import { getDictionary, isLocale, locales, type Locale } from "@/i18n";
 
 const notoSansJP = Noto_Sans_JP({
@@ -15,7 +13,9 @@ const notoSansJP = Noto_Sans_JP({
 	preload: false,
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://tetsugo02-github-io.vercel.app";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://tetsugo02.github.io";
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
 	return locales.map((lang) => ({ lang }));
@@ -41,19 +41,19 @@ export async function generateMetadata({
 			template: `%s | ${isJapanese ? "董 哲豪" : "Tetsugo To"}`,
 		},
 		description,
-		icons: { icon: "/avatar.ico" },
+		icons: { icon: "/favicon.ico" },
 		metadataBase: new URL(baseUrl),
 		alternates: {
-			canonical: `/${lang}`,
+			canonical: `/${lang}/`,
 			languages: {
-				en: "/en",
-				ja: "/ja",
+				en: "/en/",
+				ja: "/ja/",
 			},
 		},
 		openGraph: {
 			title,
 			description,
-			images: [{ url: "/api/og", width: 1200, height: 630 }],
+			images: [{ url: "/og.png", width: 1200, height: 630 }],
 			locale: isJapanese ? "ja_JP" : "en_US",
 			alternateLocale: [isJapanese ? "en_US" : "ja_JP"],
 			type: "website",
@@ -62,7 +62,7 @@ export async function generateMetadata({
 			card: "summary_large_image",
 			title,
 			description,
-			images: ["/api/og"],
+			images: ["/og.png"],
 		},
 	};
 }
@@ -78,14 +78,6 @@ export default async function LocaleLayout({
 	if (!isLocale(lang)) notFound();
 
 	const dictionary = getDictionary(lang);
-	const works = getWorksData();
-	const worksImageUrls = works
-		.map((work) => work.imageUrl)
-		.filter((imageUrl): imageUrl is string => Boolean(imageUrl));
-	const worksPreviewUrls = works
-		.filter((work) => !work.imageUrl)
-		.map((work) => work.link?.[0])
-		.filter((url): url is string => Boolean(url));
 
 	return (
 		<html lang={lang} suppressHydrationWarning>
@@ -100,7 +92,6 @@ export default async function LocaleLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<WorksPreviewPreloader urls={worksPreviewUrls} imageUrls={worksImageUrls} />
 					<div className="flex min-h-screen w-full">
 						<AppSidebar
 							locale={lang as Locale}

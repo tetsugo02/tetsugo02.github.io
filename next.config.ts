@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-	/* config options here */
-	// output: "export", // Disabled for Vercel deployment (API Routes support)
+	output: "export",
+	trailingSlash: true,
 	images: {
 		unoptimized: true,
 	},

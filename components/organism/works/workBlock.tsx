@@ -10,7 +10,6 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "@/components/ui/dialog";
-import { LinkPreview } from "@/components/molecule/linkPreview";
 import { getIconByName } from "@/lib/iconMapper";
 import type { ResolvedWorkBlockType, WorkType } from "@/types/workBlockType";
 
@@ -50,13 +49,15 @@ export const WorkBlock = ({
 							/>
 						</div>
 					) : primaryLink ? (
-						<div className="h-40 overflow-hidden border-b border-border">
-							<LinkPreview
-								url={primaryLink}
-								className="h-full w-full rounded-none border-0"
-								showText={false}
-							/>
-						</div>
+						<a
+							href={primaryLink}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="flex h-40 items-center justify-center gap-2 border-b border-border bg-muted/40 px-5 text-sm text-muted-foreground transition-colors hover:bg-muted"
+						>
+							<ArrowUpRight aria-hidden="true" className="size-5" />
+							<span className="truncate">{new URL(primaryLink).hostname}</span>
+						</a>
 					) : (
 						<div className="flex h-40 items-center justify-center border-b border-border bg-muted/40 text-xs text-muted-foreground">
 							{labels.noPreview}
