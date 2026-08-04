@@ -11,6 +11,7 @@ import {
 	DialogTrigger,
 } from "@/components/ui/dialog";
 import { getIconByName } from "@/lib/iconMapper";
+import { getWorkTypeBadge } from "@/lib/workHelper";
 import type { ResolvedWorkBlockType, WorkType } from "@/types/workBlockType";
 
 interface WorkLabels {
@@ -30,6 +31,7 @@ export const WorkBlock = ({
 	labels: WorkLabels;
 }) => {
 	const primaryLink = work.link?.[0];
+	const typeBadge = getWorkTypeBadge(work.workType);
 
 	return (
 		<Dialog>
@@ -66,7 +68,9 @@ export const WorkBlock = ({
 
 				<div className="flex flex-1 flex-col p-5">
 					<div className="flex items-start justify-between gap-4">
-						<span className="rounded-md bg-muted px-2 py-1 text-xs font-semibold text-muted-foreground">
+						<span
+							className={`rounded-md border px-2 py-1 text-xs font-semibold ${typeBadge.className}`}
+						>
 							{labels.types[work.workType]}
 						</span>
 						{work.date && (
