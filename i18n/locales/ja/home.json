@@ -24,7 +24,19 @@
 		],
 		"career": [
 			{
-				"title": "サーバーチーム インターンシップ",
+				"title": "AIエンジニア インターン",
+				"company": "KPMG FAS",
+				"period": "2026年9月",
+				"url": "https://kpmg.com/jp/ja/about/fas.html"
+			},
+			{
+				"title": "機械学習エンジニア インターン",
+				"company": "LINEヤフー株式会社",
+				"period": "2026年8月 – 9月",
+				"url": "https://www.lycorp.co.jp/en/"
+			},
+			{
+				"title": "サーバーチーム インターン",
 				"company": "慶應義塾大学 AIC",
 				"period": "2025/12 ~ 現在",
 				"description": "AI研究のためのGPUクラスターの構築と保守に取り組んでいます。",

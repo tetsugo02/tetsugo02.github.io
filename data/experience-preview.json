@@ -1,0 +1,26 @@
+{
+	"https://kpmg.com/jp/ja/about/fas.html": {
+		"title": "KPMG FAS",
+		"description": "KPMGのグローバルネットワークとの連携の下、経営戦略の立案から、M＆A／PMI・事業再生支援のほか、企業内不正調査・防止策の策定まで、顧客企業の課題を解決し、企業価値の向上に貢献します。",
+		"image": "https://recruit.kpmg-fas.jp/assets/favicons/og_img.png",
+		"siteName": "KPMG",
+		"url": "https://kpmg.com/jp/ja/about/fas.html",
+		"fetchedAt": "2026-08-04T08:57:41.890Z"
+	},
+	"https://www.lycorp.co.jp/en/": {
+		"title": "LY Corporation",
+		"description": "LY Corporation's corporate website. Yahoo Japan Corporation, LINE Corporation, and other Group companies were reorganized into LY Corporation in October 2023.LY Corporation spans diverse businesses, including search, portal website, e-commerce, communications, and advertising under its mission, 'WOW Our Users!'",
+		"image": "https://www.lycorp.co.jp/assets/images/ogp_ly_en_bk_1200_628.png",
+		"siteName": "LY Corporation",
+		"url": "https://www.lycorp.co.jp/en/",
+		"fetchedAt": "2026-08-04T08:57:41.998Z"
+	},
+	"https://aic.keio.ac.jp/": {
+		"title": "AIC：慶應義塾大学AI・プログラミング学習団体",
+		"description": "慶應の研究組織で、社会で活躍するAI・IT人材の育成・輩出を目指しています。大学と企業が連携し、実データや高度な計算機環境を提供しています。",
+		"image": "https://aic.keio.ac.jp/wps/wp-content/uploads/2024/02/ogp_thumb.png",
+		"siteName": "AIC：慶應義塾大学AI・プログラミング学習団体",
+		"url": "https://aic.keio.ac.jp/",
+		"fetchedAt": "2026-08-04T08:57:42.804Z"
+	}
+}

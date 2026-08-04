@@ -2,6 +2,7 @@
 
 import { ArrowUpRight, CalendarDays, Landmark, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { OgPreviewImage } from "@/components/ui/ogPreviewImage";
 import {
 	Dialog,
 	DialogContent,
@@ -42,14 +43,12 @@ export const WorkBlock = ({
 			>
 				{work.workType !== "publication" &&
 					(work.imageUrl ? (
-						<div className="h-40 overflow-hidden bg-muted">
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img
-								src={work.imageUrl}
-								alt=""
-								className="h-full w-full object-cover grayscale-[12%]"
-							/>
-						</div>
+						<OgPreviewImage
+							src={work.imageUrl}
+							fallback={primaryLink ? new URL(primaryLink).hostname : labels.noPreview}
+							className="h-40 border-b border-border"
+							imageClassName="object-cover grayscale-[12%]"
+						/>
 					) : primaryLink ? (
 						<a
 							href={primaryLink}
