@@ -5,6 +5,7 @@ export interface WorkBlockType {
 	title: LocalizedText;
 	workType: WorkType;
 	date?: string;
+	pinned?: boolean;
 	link?: string[];
 	description: LocalizedText;
 	authors?: LocalizedText[];

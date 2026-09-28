@@ -18,6 +18,8 @@
 	"works": {
 		"title": "Selected Works",
 		"intro": "Projects, open-source contributions, articles, and research.",
+		"pinned": "Pinned Works",
+		"recent": "Recent Works",
 		"filters": {
 			"all": "All",
 			"event": "Events",

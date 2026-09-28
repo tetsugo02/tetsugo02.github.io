@@ -3,6 +3,7 @@
     en: "Progate Hackthon 2025 - AWS Prize"
   workType: "event"
   date: "2025-03"
+  pinned: true
   link:
     - "https://topaz.dev/projects/fe7d3c5c2705dd89510b"
     - "https://github.com/1010mark/ProgateHack"
@@ -20,6 +21,7 @@
     en: "AMD Open Robotics Hackthon 2025 - 3rd Place"
   workType: "event"
   date: "2025-12"
+  pinned: true
   description:
     ja: "2025年12月に開催されたAMD Open Robotics Hackathon 2025に参加し，3位を獲得しました．"
     en: "Participated in the AMD Open Robotics Hackathon 2025 held in December 2025 and secured 3rd place."
@@ -34,6 +36,7 @@
 
 - title: "huggingface/lerobot - Pull Request Contributions"
   workType: "oss"
+  pinned: true
   description:
     ja: "huggingface/lerobot type hintの実装及びmpypyエラーの修正を行い，使用者の利便性向上に貢献しました．"
     en: "Contributed to the implementation of type hints and fixed mpypy errors in huggingface/lerobot, enhancing user convenience."
@@ -47,6 +50,7 @@
 
 - title: "marimo-team/marimo - Pull Request Contributions"
   workType: "oss"
+  pinned: true
   description:
     ja: "marimo-team/marimoのドキュメント改善やバグ修正に貢献しました．"
     en: "Contributed to documentation improvements and bug fixes in marimo-team/marimo."
@@ -62,6 +66,7 @@
 
 - title: "keio-crl/robopy - Author"
   workType: "oss"
+  pinned: true
   description:
     ja: "Dynamixel サーボモーターを使用するkochロボット及びrakuda2ロボットをPythonで制御し，テレオペレーション，データ収集と可視化，ポリシーの生成行動の出力を行うライブラリを開発しました．"
     en: "Developed a Python library to control Koch and Rakuda2 robots using Dynamixel servo motors, enabling teleoperation, data collection and visualization, and policy generation behavior output."
@@ -139,6 +144,7 @@
     en: "Multimodal World Models via Dynamic Modality Integration Based on Sensory Reliability"
   workType: "publication"
   date: "2026-6"
+  pinned: true
   authors:
     - ja: "董 哲豪"
       en: "Zhehao Dong"

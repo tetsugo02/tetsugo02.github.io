@@ -48,6 +48,12 @@ const localize = (value: LocalizedText | undefined, locale: Locale) => {
 	return typeof value === "string" ? value : value[locale] || value.en || value.ja;
 };
 
+const dateOrder = (date?: string) => {
+	const match = date?.match(/^(\d{4})(?:-(\d{1,2}))?(?:-(\d{1,2}))?$/);
+	if (!match) return 0;
+	return Number(match[1]) * 10000 + Number(match[2] || 1) * 100 + Number(match[3] || 1);
+};
+
 export async function generateMetadata({
 	params,
 }: {
@@ -70,6 +76,11 @@ const WorksPage = async ({ params }: { params: Promise<{ lang: string }> }) => {
 		authors: work.authors?.map((author) => localize(author, lang)),
 		conference: localize(work.conference, lang) || undefined,
 	}));
+	const pinnedWorks = works.filter((work) => work.pinned);
+	const recentWorks = works
+		.filter((work) => !work.pinned)
+		.sort((a, b) => dateOrder(b.date) - dateOrder(a.date));
+	const sortedWorks = [...works].sort((a, b) => dateOrder(b.date) - dateOrder(a.date));
 	const labels: WorkLabels = {
 		empty: copy.empty,
 		noPreview: copy.noPreview,
@@ -111,22 +122,35 @@ const WorksPage = async ({ params }: { params: Promise<{ lang: string }> }) => {
 				</TabsList>
 
 				<TabsContent value="all">
-					<WorkGrid works={works} labels={labels} />
+					{pinnedWorks.length > 0 && (
+						<section aria-labelledby="pinned-works-heading">
+							<h2 id="pinned-works-heading" className="mt-8 text-2xl font-semibold">
+								{copy.pinned}
+							</h2>
+							<WorkGrid works={pinnedWorks} labels={labels} />
+						</section>
+					)}
+					<section aria-labelledby="recent-works-heading" className="mt-10">
+						<h2 id="recent-works-heading" className="text-2xl font-semibold">
+							{copy.recent}
+						</h2>
+						<WorkGrid works={recentWorks} labels={labels} />
+					</section>
 				</TabsContent>
 				<TabsContent value="event">
-					<WorkGrid works={works} type="event" labels={labels} />
+					<WorkGrid works={sortedWorks} type="event" labels={labels} />
 				</TabsContent>
 				<TabsContent value="oss">
-					<WorkGrid works={works} type="oss" labels={labels} />
+					<WorkGrid works={sortedWorks} type="oss" labels={labels} />
 				</TabsContent>
 				<TabsContent value="article">
-					<WorkGrid works={works} type="article" labels={labels} />
+					<WorkGrid works={sortedWorks} type="article" labels={labels} />
 				</TabsContent>
 				<TabsContent value="publication">
-					<WorkGrid works={works} type="publication" labels={labels} />
+					<WorkGrid works={sortedWorks} type="publication" labels={labels} />
 				</TabsContent>
 				<TabsContent value="other">
-					<WorkGrid works={works} type="other" labels={labels} />
+					<WorkGrid works={sortedWorks} type="other" labels={labels} />
 				</TabsContent>
 			</Tabs>
 		</div>
