@@ -17,7 +17,9 @@
 /.next/
 /out/
 /public/generated/experience/
+/public/generated/works/
 /.cache/experience-preview.json
+/.cache/works-preview.json
 
 # production
 /build

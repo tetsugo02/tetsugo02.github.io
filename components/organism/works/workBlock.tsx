@@ -46,6 +46,7 @@ export const WorkBlock = ({
 						<OgPreviewImage
 							src={work.imageUrl}
 							fallback={primaryLink ? new URL(primaryLink).hostname : labels.noPreview}
+							loading={work.pinned ? "eager" : "lazy"}
 							className="h-40 border-b border-border"
 							imageClassName="object-cover grayscale-[12%]"
 						/>

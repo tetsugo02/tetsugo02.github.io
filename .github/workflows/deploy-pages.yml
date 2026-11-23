@@ -42,12 +42,23 @@ jobs:
         uses: actions/cache@v4
         with:
           path: public/generated/experience
-          key: experience-og-${{ hashFiles('data/experience-preview.json', 'i18n/locales/*/home.json', 'scripts/generateExperiencePreviews.ts') }}
+          key: experience-og-${{ hashFiles('data/experience-preview.json', 'i18n/locales/*/home.json', 'scripts/generateExperiencePreviews.ts', 'scripts/previewUtils.ts') }}
           restore-keys: |
             experience-og-
 
       - name: Generate static Experience OG images
         run: pnpm generate:experience-preview && pnpm generate:experience-preview:static
+
+      - name: Restore Works OG images
+        uses: actions/cache@v4
+        with:
+          path: public/generated/works
+          key: works-og-${{ hashFiles('data/works-preview.json', 'data/works.yaml', 'scripts/generateWorksPreviews.ts', 'scripts/previewUtils.ts') }}
+          restore-keys: |
+            works-og-
+
+      - name: Generate static Works OG images
+        run: pnpm generate:works-preview && pnpm generate:works-preview:static
 
       - name: Build static site
         run: pnpm build

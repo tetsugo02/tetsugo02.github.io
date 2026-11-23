@@ -64,6 +64,23 @@
     - name: "Open Source"
       iconName: "openSource"
 
+- title: "tetsugo02/roboloom - Author"
+  workType: "oss"
+  pinned: true
+  description:
+    ja: "dora-rs 上で遠隔操作・マルチモーダルデータ収集・方策推論を行い，LeRobotDataset (0.7.0) へ直接保存するロボット実験システムを開発しています．"
+    en: "Developing a dora-rs-based robot experiment system for teleoperation, multimodal data collection, and policy inference that saves directly to LeRobotDataset (0.7.0)."
+  link:
+    - "https://github.com/tetsugo02/roboloom"
+    - "https://tetsugo02.github.io/roboloom/"
+  badges:
+    - name: "Python"
+      iconName: "python"
+    - name: "dora-rs"
+      iconName: "cpu"
+    - name: "Open Source"
+      iconName: "openSource"
+
 - title: "keio-crl/robopy - Author"
   workType: "oss"
   pinned: true

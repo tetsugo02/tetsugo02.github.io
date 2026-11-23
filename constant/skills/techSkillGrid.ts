@@ -1,3 +1,4 @@
+import ansibleIcon from "@iconify-icons/simple-icons/ansible";
 import cPlusPlusIcon from "@iconify-icons/logos/c-plusplus";
 import linuxIcon from "@iconify-icons/logos/linux-tux";
 import nextJsIcon from "@iconify-icons/logos/nextjs-icon";
@@ -19,6 +20,7 @@ const iconMap = {
 	"Next.js": { icon: nextJsIcon },
 	PyTorch: { icon: pytorchIcon },
 	Linux: { icon: linuxIcon },
+	Ansible: { icon: ansibleIcon, color: "#EE0000" },
 	NumPy: { icon: numpyIcon },
 	Unity: { icon: unityIcon, className: "rounded-sm bg-white p-0.5" },
 };

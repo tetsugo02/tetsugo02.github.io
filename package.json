@@ -5,8 +5,9 @@
   "scripts": {
     "prebuild": "pnpm generate:works-preview && pnpm generate:experience-preview",
     "dev": "next dev --turbopack",
-    "generate:works-preview": "node scripts/generateWorksPreviews.mjs",
-    "generate:works-preview:refresh": "node scripts/generateWorksPreviews.mjs --refresh",
+    "generate:works-preview": "node --import tsx scripts/generateWorksPreviews.ts",
+    "generate:works-preview:refresh": "node --import tsx scripts/generateWorksPreviews.ts --refresh",
+    "generate:works-preview:static": "node --import tsx scripts/generateWorksPreviews.ts --static",
     "generate:experience-preview": "node --import tsx scripts/generateExperiencePreviews.ts",
     "generate:experience-preview:refresh": "node --import tsx scripts/generateExperiencePreviews.ts --refresh",
     "generate:experience-preview:static": "node --import tsx scripts/generateExperiencePreviews.ts --static",

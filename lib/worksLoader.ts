@@ -5,6 +5,7 @@ import { WorkBlockType } from "@/types/workBlockType";
 
 const DATA_FILE_PATH = path.join(process.cwd(), "data", "works.yaml");
 const PREVIEW_FILE_PATH = path.join(process.cwd(), "data", "works-preview.json");
+const STATIC_PREVIEW_FILE_PATH = path.join(process.cwd(), ".cache", "works-preview.json");
 
 type WorksPreviewMap = Record<
 	string,
@@ -13,14 +14,20 @@ type WorksPreviewMap = Record<
 	}
 >;
 
-const getWorksPreviewData = (): WorksPreviewMap => {
+const readPreviewJson = (filePath: string): WorksPreviewMap => {
 	try {
-		if (!fs.existsSync(PREVIEW_FILE_PATH)) return {};
-		return JSON.parse(fs.readFileSync(PREVIEW_FILE_PATH, "utf8")) as WorksPreviewMap;
+		if (!fs.existsSync(filePath)) return {};
+		return JSON.parse(fs.readFileSync(filePath, "utf8")) as WorksPreviewMap;
 	} catch (error) {
-		console.error("Error loading works preview data:", error);
+		console.error(`Error loading works preview data from ${filePath}:`, error);
 		return {};
 	}
+};
+
+const getWorksPreviewData = (): WorksPreviewMap => {
+	const previews = readPreviewJson(PREVIEW_FILE_PATH);
+	const staticPreviews = readPreviewJson(STATIC_PREVIEW_FILE_PATH);
+	return { ...previews, ...staticPreviews };
 };
 
 export const getWorksData = (): WorkBlockType[] => {

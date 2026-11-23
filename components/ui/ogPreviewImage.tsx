@@ -8,12 +8,14 @@ export const OgPreviewImage = ({
 	src,
 	alt = "",
 	fallback,
+	loading = "lazy",
 	className,
 	imageClassName,
 }: {
 	src: string;
 	alt?: string;
 	fallback: string;
+	loading?: "eager" | "lazy";
 	className?: string;
 	imageClassName?: string;
 }) => {
@@ -55,7 +57,7 @@ export const OgPreviewImage = ({
 					ref={imageRef}
 					src={src}
 					alt={alt}
-					loading="lazy"
+					loading={loading}
 					decoding="async"
 					onLoad={() => setIsLoaded(true)}
 					onError={() => setHasError(true)}

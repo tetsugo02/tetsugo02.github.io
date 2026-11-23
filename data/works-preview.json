@@ -31,6 +31,14 @@
     "url": "https://github.com/marimo-team/marimo",
     "fetchedAt": "2026-06-08T08:02:40.073Z"
   },
+  "https://github.com/tetsugo02/roboloom": {
+    "title": "GitHub - tetsugo02/roboloom: Dora based robot experiment system",
+    "description": "Dora based robot experiment system. Contribute to tetsugo02/roboloom development by creating an account on GitHub.",
+    "image": "https://opengraph.githubassets.com/c5068b68fb486070b2b50f82b6f7227609a994441d599dd4b7c485d5c023b40b/tetsugo02/roboloom",
+    "siteName": "GitHub",
+    "url": "https://github.com/tetsugo02/roboloom",
+    "fetchedAt": "2026-11-23T15:44:58.349Z"
+  },
   "https://github.com/keio-crl/robopy": {
     "title": "GitHub - keio-crl/robopy: A python interface to control robots which use dynamixel motors",
     "description": "A python interface to control robots which use dynamixel motors - keio-crl/robopy",

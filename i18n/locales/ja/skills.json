@@ -55,6 +55,9 @@
 				"name": "Linux"
 			},
 			{
+				"name": "Ansible"
+			},
+			{
 				"name": "NumPy"
 			},
 			{
